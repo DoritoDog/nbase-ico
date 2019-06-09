@@ -94,4 +94,19 @@ class UsersController extends AppController
             }
         }
     }
+
+    public function support() {
+        $contactTable = TableRegistry::get('ContactMessages');
+        $msg = $contactTable->newEntity();
+        $this->set('msg', $msg);
+
+        if ($this->request->is('post')) {
+            $msg = $contactTable->patchEntity($msg, $this->request->getData());
+            if ($contactTable->save($msg)) {
+                $this->Flash->success(__('Thank you for getting in touch!'));
+                return $this->redirect(['action' => 'support']);
+            }
+            $this->Flash->error(__('An error occoured while sending your message, please try again later.'));
+        }
+    }
 }

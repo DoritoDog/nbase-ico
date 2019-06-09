@@ -675,7 +675,7 @@ iframe {
   color: #8d9093;
 }
 
-.dark-form-input:active {
+.dark-form-input:focus {
   background: #1d1d1d !important;
 }
 
