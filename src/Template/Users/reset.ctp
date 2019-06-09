@@ -12,14 +12,14 @@
                     'class' => 'form-control', 'label' => false, 'required' => true,
                     'autofocus' => true
                 ];
-                echo $this->Form->input('password', $options);
+                echo $this->Form->control('password', $options);
                 ?>
                 </div>
                 <div class="form-group">
                 <?php 
                     echo $this->Form->label('password', 'Confirm Password', ['class' => 'bold']);
                     $options = ['class' => 'form-control', 'label' => false, 'required' => true];
-                    echo $this->Form->input('password', $options);
+                    echo $this->Form->control('password', $options);
                 ?>
                 </div>
                 <?php echo $this->Form->button('Save', ['class' => 'btn btn-dark']); ?>

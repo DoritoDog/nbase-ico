@@ -4,7 +4,7 @@
 
     echo $this->Form->label('email', 'Enter the email address associated with your account', ['class' => 'white']);
     $options = ['class' => 'form-control', 'placeholder' => 'bill@example.com', 'label' => false, 'name' => 'email'];
-    echo $this->Form->input('email', $options);
+    echo $this->Form->control('email', $options);
 
     echo $this->Form->button('Send Reset', ['class' => 'btn btn-light mt-3']);
 

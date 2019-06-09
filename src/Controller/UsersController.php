@@ -80,7 +80,7 @@ class UsersController extends AppController
 
     public function forgotPassword() {
         if ($this->request->is('post')) {
-            $user = $this->Users->findByEmail($this->request->data('email'))->first();
+            $user = $this->Users->findByEmail($this->request->getData()['email'])->first();
             if (is_null($user)) {
                 $this->Flash->error('Email address does not exist. Please try again');
             } else {
@@ -106,10 +106,10 @@ class UsersController extends AppController
             $query = $this->Users->find('all', ['conditions' => $conditions]);
             $user = $query->first();
             if ($user) {
-                if (!empty($this->request->data)) {
-                    $this->request->data['passkey'] = null;
-                    $this->request->data['timeout'] = null;
-                    $user = $this->Users->patchEntity($user, $this->request->data);
+                if (!empty($this->request->getData())) {
+                    $this->request->getData()['passkey'] = null;
+                    $this->request->getData()['timeout'] = null;
+                    $user = $this->Users->patchEntity($user, $this->request->getData());
                     if ($this->Users->save($user)) {
                         $this->Flash->set(__('Your password has been updated.'));
                         return $this->redirect(array('action' => 'login'));
