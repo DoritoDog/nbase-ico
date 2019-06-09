@@ -1,0 +1,710 @@
+/* #region Top */
+
+html, body {
+  background: #000 !important;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.grey {
+  color: #9b9b9b;
+}
+
+.dark-grey {
+  color: #4b4b4b;
+}
+
+.gold {
+  color: #ffa600;
+}
+
+.dark-gold {
+  color: #b87700;
+}
+
+.white {
+  color: white;
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/LandingPageBackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+}
+
+.header-text {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 50%;
+}
+
+#ico-countdown {
+  height: 50%;
+}
+
+/* #endregion */
+
+/* #region Navigation bar */
+
+.navigation-bar {
+  position: absolute;
+  right: 0;
+  padding: 20px;
+  transition-duration: 0.5s;
+}
+
+.navigation-bar li {
+  float: left;
+  margin-right: 40px;
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.navigation-bar li a {
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.navigation-bar li a:hover, .navbar-toggle:hover {
+  text-decoration: none;
+  color: #ffa600 !important;
+}
+
+.language {
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: white;
+  font-size: 20px;
+  width: 250px;
+  z-index: 3;
+}
+
+.dropdown-button {
+  margin-right: 50px;
+}
+
+.dropdown-languages {
+  position: relative;
+  z-index: 3;
+  background-color: whitesmoke;
+  display: none;
+}
+
+.dropdown-languages ul {
+  list-style: none;
+  color: black;
+  padding: 5px;
+}
+
+.dropdown-languages li:hover {
+  font-weight: bold;
+}
+
+.navbar-toggle {
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.dashboard-link {
+  background-color: #470000;
+  padding: 5px 15px;
+  border-radius: 25px;
+  border: 1px solid white;
+}
+
+/* #endregion */
+
+/* #region Flip Clock */
+
+.flip-clock {
+  text-align: center;
+  -webkit-perspective: 400px;
+  perspective: 400px;
+  margin: 20px auto;
+
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 0 100px;
+}
+.flip-clock *,
+.flip-clock *:before,
+.flip-clock *:after {
+  box-sizing: border-box;
+}
+.flip-clock__piece {
+  display: inline-block;
+  margin: 0 5px;
+}
+.flip-clock__slot {
+  font-size: 2vw;
+}
+.card {
+  display: block;
+  position: relative;
+  padding-bottom: 0.72em;
+  font-size: 4vw;
+  line-height: 0.95;
+}
+.card__top,
+.card__bottom,
+.card__back::before,
+.card__back::after {
+  display: block;
+  height: 0.72em;
+  color: #FFF;
+  background: #470000;
+  padding: 0.25em 0.25em;
+  border-radius: 0.15em 0.15em 0 0;
+  backface-visiblity: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 1.8em;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+.card__bottom {
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: solid 1px #000;
+  background: #470000;
+  border-radius: 0 0 0.15em 0.15em;
+  pointer-events: none;
+  overflow: hidden;
+}
+.card__bottom::after {
+  display: block;
+  margin-top: -0.72em;
+}
+.card__back::before,
+.card__bottom::after {
+  content: attr(data-value);
+}
+.card__back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+}
+.card__back::before {
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+}
+.flip .card__back::before {
+  -webkit-animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+          animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+.flip .card__back .card__bottom {
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+          animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+}
+
+@media screen and (max-width: 800px) {
+  #ico-countdown {
+    width: 100% !important;
+  }
+
+  .flip-clock {
+    width: 100% !important;
+    margin: auto !important;
+  }
+
+  .flip-clock__slot {
+    font-size: 5vw !important;
+  }
+
+  .card {
+    font-size: 9vw !important;
+  }
+}
+
+@-webkit-keyframes flipTop {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%,
+  99% {
+    opacity: 0.99;
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipTop {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%,
+  99% {
+    opacity: 0.99;
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes flipBottom {
+  0%,
+  50% {
+    z-index: -1;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+@keyframes flipBottom {
+  0%,
+  50% {
+    z-index: -1;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+
+/* #endregion */
+
+/* #region Misc. */
+
+.clouds-bg {
+  background-image: url('../img/LandingPageBackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#economy p {
+  font-size: 20px;
+}
+
+.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-content-col {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-x {
+  display: flex;
+  justify-content: center;
+}
+
+.full-h {
+  height: 100%;
+}
+
+.img-btn {
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.img-btn:hover {
+  transform: scale(1.2, 1.2);
+}
+
+iframe {
+  border: none;
+  outline: none;
+}
+
+.trading-video {
+  margin-bottom: 100px;
+}
+
+.large-title {
+  font-size: 40px;
+  text-transform: capitalize;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.feature {
+  font-size: 30px;
+}
+
+.font-40 {
+  font-size: 70px !important;
+}
+
+.animated {
+  opacity: 0;
+}
+
+.sold-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+}
+
+.mt-200 {
+  margin-top: 200px;
+}
+
+.required {
+  color: red;
+}
+
+/* #endregion */
+
+/* #region Central Bank */
+
+.bank-info h2 {
+  margin-left: 50%;
+}
+
+.bank-desc {
+  width: 50%;
+}
+
+#bank img {
+  margin-left: 30%;
+}
+
+.bank-ul {
+  list-style-type: none;
+  padding: 0;
+  width: 70%;
+  margin-left: 50%;
+}
+
+.bank-ul .tab {
+  font-size: 30px;
+  margin: 20px 0;
+  text-transform: capitalize;
+  padding: 0;
+
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.bank-ul .tab:hover {
+  color: #b87700;
+}
+
+.ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.bank-ul .tab-description {
+  display: none;
+  color: #9b9b9b;
+}
+
+.split > * {
+  display: inline;
+}
+
+/* #endregion */
+
+/* #region Developer */
+
+#developer {
+  background-image: url('../img/OrangeBG.png');
+  background-position: center;
+  background-size: cover;
+
+  height: 70vh;
+}
+
+.dev-info {
+  float: right;
+  right: 0;
+  width: 60%;
+  margin-top: 100px;
+  color: #4b4b4b;
+}
+
+.dev-desc {
+  width: 75%;
+}
+
+.contact-fa {
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.contact-fa:hover {
+  color: #ffa600;
+}
+
+.site-link {
+  color: #FFF;
+}
+
+.site-link:hover {
+  color: #FFF;
+}
+
+#particles {
+  height: 400px;
+  overflow: hidden;
+}
+
+/* #endregion */
+
+/* #region Footer */
+
+.footer-basic-centered{
+    background-color: #000;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font: 'Ubuntu' 18px sans-serif;
+
+    padding: 45px;
+    margin-top: 80px;
+    border-top: 1px solid grey;
+}
+
+.footer-basic-centered .footer-company-motto{
+    color:  #8d9093;
+    font-size: 24px;
+    margin: 0;
+}
+
+.footer-basic-centered .footer-company-name{
+    color:  #8f9296;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-basic-centered .footer-links{
+    list-style: none;
+    color:  #ffffff;
+    padding: 35px 0 23px;
+    margin: 0;
+}
+
+.footer-basic-centered .footer-links a{
+    display:inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+    .footer-basic-centered{
+        padding: 35px;
+    }
+
+    .footer-basic-centered .footer-company-motto{
+        font-size: 18px;
+    }
+
+    .footer-basic-centered .footer-company-name{
+        font-size: 12px;
+    }
+
+    .footer-basic-centered .footer-links{
+        font-size: 14px;
+        padding: 25px 0 20px;
+    }
+
+    .footer-basic-centered .footer-links a{
+        line-height: 1.8;
+    }
+}
+
+/* #endregion */
+
+@media screen and (max-width: 800px) {
+  header {
+    background-size: 100vh;
+    height: 100vh !important;
+  }
+
+  .header-text h3 {
+    margin: auto !important;
+    width: 90% !important;
+  }
+
+  .navigation-bar {
+    position: relative !important;
+  }
+
+  .navigation-bar li {
+    float: none !important;
+    margin: auto;
+  }
+
+  .language {
+    left: 30% !important;
+  }
+
+  #economy p {
+    font-size: 16px !important;
+    width: 90% !important;
+    text-align: center;
+  }
+
+  #economy {
+    height: 200vh !important;
+  }
+
+  .split {
+    flex-direction: column !important;
+  }
+
+  .large-title {
+    font-size: 30px !important;
+    width: 90%;
+    margin: auto;
+  }
+
+  .trading-video {
+    width: 100%;
+  }
+
+  #developer {
+    background-image: none !important;
+    height: 100vh !important;
+  }
+
+  .dev-info {
+    float: none !important;
+    margin: auto;
+    widtH: 90% !important;
+  }
+
+  .dev-desc {
+    width: 100% !important;
+    text-align: justify;
+  }
+
+  .bank-desc {
+    width: 90% !important;
+  }
+
+  .bank-ul {
+    width: 100% !important;
+    margin: 10px !important;
+  }
+
+  .bank-info h2 {
+    margin: auto !important;
+    text-align: center;
+  }
+
+  #bank img {
+    margin: auto !important;
+  }
+
+  .inline {
+    flex-direction: column !important;
+  }
+}
+
+.dark-form-input {
+  background: #111111;
+  border: none;
+  color: #8d9093;
+}
+
+.dark-form-input:active {
+  background: #1d1d1d !important;
+}
+
+.dark-navbar {
+  background-color: #000000;
+  border-bottom: 3px solid #1d1d1d;
+  padding: 20px;
+}
+
+/* #region Dashboard */
+
+.ico-details-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.copy-btn {
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  color: #1d1d1d;
+}
+
+.round-bg {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #1d1d1d;
+}
+
+/* #endregion */
