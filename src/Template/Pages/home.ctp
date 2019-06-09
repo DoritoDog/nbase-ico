@@ -64,13 +64,13 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
     <div class="navigation-bar animated fadeInUp">
       <ul>
         <li><button class="navbar-toggle" onclick="toggleNavbar();"><span class="fa fa-navicon"></span></button></li>
-        <li class="navbar-link"><a href="index.html#top">nBase</a></li>
+        <li class="navbar-link"><?= $this->Html->link('nBase', ['controller' => 'Pages', 'action' => 'display']) ?></li>
         <li class="navbar-link"><?= $this->Html->link('Contact', ['controller' => 'Users', 'action' => 'support']) ?></li>
-        <li class="navbar-link"><a href="index.html#bank">Central Bank</a></li>
-        <li class="navbar-link"><a href="index.html#gameplay">Gameplay</a></li>
-        <li class="navbar-link"><a href="index.html#developer">Developer</a></li>
-        <li class="navbar-link"><a href="index.html#ico">ICO</a></li>
-        <li class="navbar-link"><a href="index.html#faq">FAQ</a></li>
+        <li class="navbar-link"><?= $this->Html->link('Central Bank', ['controller' => 'Pages', 'action' => '#bank']) ?></li>
+        <li class="navbar-link"><?= $this->Html->link('Gameplay', ['controller' => 'Pages', 'action' => '#gameplay']) ?></li>
+        <li class="navbar-link"><?= $this->Html->link('Developer', ['controller' => 'Pages', 'action' => '#developer']) ?></li>
+        <li class="navbar-link"><?= $this->Html->link('ICO', ['controller' => 'Pages', 'action' => '#ico']) ?></li>
+        <li class="navbar-link"><?= $this->Html->link('FAQ', ['controller' => 'Pages', 'action' => '#faq']) ?></li>
         <li><?php
             $url = ['controller' => 'Users', 'action' => 'add'];
             echo $this->Html->link('Sign up', $url, ['class' => 'navbar-link navbar-cta']);
