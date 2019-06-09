@@ -47,6 +47,9 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Your account has been created successfully.'));
+
+                $dashboardUrl = Router::url(['action' => 'index']);
+                $this->getMailer('User')->send('welcome', [$user, $dashboardUrl]);
                 
                 $user = $this->Auth->identify();
                 if ($user) {
