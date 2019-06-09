@@ -9,7 +9,7 @@ class UserMailer extends Mailer
     {
         $this->setTo($user->email)
             ->setProfile('default')
-            ->setSubject(sprintf('Welcome %s', $user->name))
+            ->setSubject(sprintf('Welcome %s', $user->first_name))
             ->emailFormat('html')
             ->viewVars(['firstName' => $user->first_name, 'dashboardUrl' => $dashboardUrl, 'newsUrl' => $newsUrl]);
     }

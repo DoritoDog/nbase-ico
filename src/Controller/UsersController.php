@@ -101,6 +101,34 @@ class UsersController extends AppController
         }
     }
 
+    public function reset($passkey = null) {
+        if ($passkey) {
+            $conditions =  ['passkey' => $passkey, 'timeout >' => time()];
+            $query = $this->Users->find('all', ['conditions' => $conditions]);
+            $user = $query->first();
+            if ($user) {
+                if (!empty($this->request->data)) {
+                    $this->request->data['passkey'] = null;
+                    $this->request->data['timeout'] = null;
+                    $user = $this->Users->patchEntity($user, $this->request->data);
+                    if ($this->Users->save($user)) {
+                        $this->Flash->set(__('Your password has been updated.'));
+                        return $this->redirect(array('action' => 'login'));
+                    } else {
+                        $this->Flash->error(__('The password could not be updated. Please, try again.'));
+                    }
+                }
+            } else {
+                $this->Flash->error('Invalid or expired code. Please check your email or try again.');
+                $this->redirect(['action' => 'resetPassword']);
+            }
+            unset($user->password);
+            $this->set(compact('user'));
+        } else {
+            $this->redirect('/');
+        }
+    }
+
     public function support() {
         $contactTable = TableRegistry::get('ContactMessages');
         $msg = $contactTable->newEntity();
