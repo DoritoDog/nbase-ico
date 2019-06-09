@@ -108,7 +108,7 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
     </div> -->
   </section>
 
-  <section id="sales">
+  <section id="sales" style="display: none;">
     <h2 class="text-center large-title grey pb-5">Latest Sales</h2>
 
     <div class="sales inline w-75 mx-auto" id="sales-parent">
@@ -218,13 +218,6 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
       <p class=" dev-desc animated">My name is Kareem, I'm a full-stack web, Ethereum, and mobile game developer. I was born in the United States but I currently live in Slovakia. I developed the game nBase, including the graphics, server-side programming, smart contract, and gameplay. I am currently also working on another project, which is an augumented reality game that is currently in beta. If you have any questions or would like to get in contact with me, please don't hesitate to check me out on social media, email, or any other contact!</p>
 
       <p class="mt-5 email animated"><span class="fa fa-envelope"></span> kareembelgharbi@gmail.com</p>
-
-      <div style="display: none">
-        <span class="fa fa-facebook-square font-40 mr-3 contact-fa" onclick="goTo('https://www.facebook.com/kareem.belgharbi')"></span>
-        <span class="fa fa-github-square font-40 mr-3 contact-fa"></span>
-        <span class="fa fa-steam-square font-40 mr-3 contact-fa"></span>
-        <span class="fa fa-whatsapp font-40 mr-3 contact-fa"></span></div>
-    </div>
   </section>
 
   <section class="clouds-bg grey py-5" id="faq">
@@ -286,5 +279,117 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
 </body>
 </html>
 
-</body>
-</html>
+<script>
+  
+$(window).scroll(function() {
+
+if ($(window).width() <= 549) {
+
+  $('.animated').css('opacity', 1);
+
+  } else if ($(window).width() > 549) {
+
+    if ($(window).scrollTop() > 400) {
+      $('#trading-1').addClass('fadeInDown');
+      $('#trading-2').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 600) {
+      $('#trading-3').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 700) {
+      $('#economy iframe').addClass('fadeInDown');
+    }
+
+    if ($(window).scrollTop() > 1400) {
+      $('#bank > h2').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 1500) {
+      $('#bank p').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 1600) {
+      $('.bank-info > h2').addClass('fadeInDown');
+      $('#bank .float-left').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 1700) {
+      $('#tab-1').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 1750) {
+      $('#tab-2').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 1800) {
+      $('#tab-3').addClass('fadeInDown');
+    }
+
+    if ($(window).scrollTop() > 2000) {
+      $('#gameplay h2').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 2100) {
+      $('#gameplay h5').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 2200) {
+      $('#gameplay img').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 2300) {
+      $('#gameplay p').addClass('fadeInDown');
+    }
+
+    if ($(window).scrollTop() > 2600) {
+      $('#ico-details').addClass('fadeInDown');
+      $('#ico-stats').addClass('fadeInDown');
+    }
+
+    if ($(window).scrollTop() > 3000) {
+      $('#developer h2').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 3100) {
+      $('#developer h3').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 3200) {
+      $('.dev-desc').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 3300) {
+      $('#developer .email').addClass('fadeInDown');
+    }
+
+    if ($(window).scrollTop() > 4200) {
+      $('#faq h2').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 4000) {
+      $('#faq-1').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 4200) {
+      $('#faq-2').addClass('fadeInDown');
+    }
+    if ($(window).scrollTop() > 4400) {
+      $('#faq-3').addClass('fadeInDown');
+    }
+
+  }
+});
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+  let sales = JSON.parse(this.responseText);
+  sales.forEach(soldItem => {
+    console.log(soldItem);
+    let parent = document.createElement('div');
+    parent.classList.add('sold-item');
+
+    let img = document.createElement('img');
+    //img.src = "?= $images ?>" + soldItem.item_identifier + '.png';
+    img.height = 200;
+    parent.appendChild(img);
+
+    let h4 = document.createElement('h4');
+    h4.innerHTML = soldItem.item_identifier + ' <br> ' + `<small>${soldItem.address.substr(0, 12)}...</small>`;
+    h4.classList.add('text-center');
+    parent.appendChild(h4);
+
+    document.getElementById('sales-parent').appendChild(parent);
+  });
+}
+};
+xhttp.open("POST", "https://api.nbase.belgharbi.com/lastSolds", true);
+xhttp.send();
+</script>
