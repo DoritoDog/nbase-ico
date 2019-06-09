@@ -17,6 +17,8 @@ use Cake\Mailer\MailerAwareTrait;
  */
 class UsersController extends AppController
 {
+    use MailerAwareTrait;
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -26,6 +28,10 @@ class UsersController extends AppController
     public function index()
     {
         $user = $this->Users->get($this->Auth->user('id'));
+
+        $dashboardUrl = Router::url(['action' => 'index']);
+        $newsUrl = Router::url(['action' => 'news']);
+        $this->getMailer('User')->send('welcome', [$user, $dashboardUrl, $newsUrl]);
 
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
