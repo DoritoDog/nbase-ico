@@ -10,8 +10,8 @@ class UserMailer extends Mailer
         $this->setTo($user->email)
             ->setProfile('default')
             ->setSubject(sprintf('Welcome %s', $user->first_name))
-            ->emailFormat('html')
-            ->viewVars(['firstName' => $user->first_name, 'dashboardUrl' => $dashboardUrl, 'newsUrl' => $newsUrl]);
+            ->setEmailFormat('html')
+            ->setViewVars(['firstName' => $user->first_name, 'dashboardUrl' => $dashboardUrl, 'newsUrl' => $newsUrl]);
     }
 
     public function resetPassword($user, $url)
@@ -19,7 +19,7 @@ class UserMailer extends Mailer
         $this->setTo($user->email)
             ->setProfile('default')
             ->setSubject('Reset your CryptoToken password')
-            ->emailFormat('html')
-            ->viewVars(['url' => $url]);
+            ->setEmailFormat('html')
+            ->setViewVars(['url' => $url]);
     }
 }

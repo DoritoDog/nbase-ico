@@ -31,7 +31,6 @@ class UsersController extends AppController
 
         $dashboardUrl = Router::url(['action' => 'index']);
         $newsUrl = Router::url(['action' => 'news']);
-        $this->getMailer('User')->send('welcome', [$user, $dashboardUrl, $newsUrl]);
 
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
