@@ -27,7 +27,6 @@ if (!Configure::read('debug')) :
     );
 endif;
 
-$title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +34,7 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><?= $title ?></title>
+  <title>nBase | a Strategy Game With an Advanced Virtual Economy</title>
 
   <link rel="stylesheet" href="css/style.css">
 

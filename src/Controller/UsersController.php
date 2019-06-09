@@ -54,7 +54,7 @@ class UsersController extends AppController
                     return $this->redirect($this->Auth->redirectUrl());
                 }
             }
-            $this->Flash->error(__('Unable to add the user.'));
+            $this->Flash->error(__('An error occoured while registering your account, please try again later or notify our support.'));
         }
 
         $countries = TableRegistry::get('Countries')->find();
@@ -70,7 +70,7 @@ class UsersController extends AppController
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error(__('Invalid username or password, try again'));
+            $this->Flash->error(__('Invalid username or password, please try again.'));
         }
     }
 
@@ -92,7 +92,7 @@ class UsersController extends AppController
 
                     // Emails the user their reset URL.
                     $this->getMailer('User')->send('resetPassword', [$user, $url]);
-                    $this->redirect(['action' => 'profile']);
+                    $this->redirect(['action' => 'login']);
                 } else {
                     $this->Flash->error('An unexpected error occoured, Please try again later.');
                 }
