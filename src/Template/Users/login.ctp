@@ -1,7 +1,3 @@
-<div class="mt-4">
-    <?= $this->Html->link('Home', ['controller' => 'Pages'], ['class' => 'site-link ml-5']) ?>
-</div>
-
 <h2 class="text-center mb-4 grey">Sign in</h2>
 <div class="w-100 mx-auto">
     <?= $this->Form->create() ?>

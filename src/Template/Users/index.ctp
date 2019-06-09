@@ -7,7 +7,7 @@
         <?= $this->Form->create() ?>
         <div class="form-group w-75">
             <?php
-            echo $this->Form->label('eth_address', 'Address', ['style' => 'font-weight:bold', 'class' => 'gold']);
+            echo $this->Form->label('eth_address', 'Your Address', ['style' => 'font-weight:bold', 'class' => 'gold']);
             
             $options = [
                 'type' => 'text', 'name' => 'eth_address', 'label' => false, 'class' => 'form-control dark-form-input', 'required' => true,
@@ -25,7 +25,7 @@
         </div>
         <div class="inline grey">
           <div class="mr-5">ETH Balance</div>
-          <div class="ml-5" id="ncg-balance">128.36</div>
+          <div class="ml-5" id="eth-balance">128.36</div>
         </div>
       </div>
 
@@ -61,6 +61,7 @@
   </div>
 </div>
 
+<?= $this->Html->script('bignumber.js') ?>
 <script>
 
 function copy(element) {
@@ -71,14 +72,20 @@ function copy(element) {
     $temp.remove();
 }
 
-const url = 'https://api.tokenbalance.com/balance/0xe056C79647dF965cbECe291998Dd8C238304726b/0x198ef1ec325a96cc354c7266a038be8b5c558f67';
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    console.log(this.responseText);
-  }
-};
-xhttp.open("GET", url, true);
-xhttp.send();
+const decimals = new BigNumber('1000000000000000000');
+
+const contractAddress = '0xe056C79647dF965cbECe291998Dd8C238304726b';
+const accountAddress = '<?= $user->eth_address ?>';
+const ncgBalanceUrl = `https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=YourApiKeyToken`;
+const ethBalanceUrl = `https://api.etherscan.io/api?module=account&action=balance&address=${accountAddress}&tag=latest&apikey=YourApiKeyToken`;
+
+$.post(ncgBalanceUrl, { }, (data, status) => {
+  let balance = new BigNumber(data.result).div(decimals);
+  $('#ncg-balance').html(balance.toString() + ' NCG');
+});
+$.post(ethBalanceUrl, { }, (data, status) => {
+  let balance = new BigNumber(data.result).div(decimals);
+  $('#eth-balance').html(balance.toString() + ' ETH');
+});
 
 </script>

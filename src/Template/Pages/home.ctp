@@ -65,7 +65,7 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
       <ul>
         <li><button class="navbar-toggle" onclick="toggleNavbar();"><span class="fa fa-navicon"></span></button></li>
         <li class="navbar-link"><a href="index.html#top">nBase</a></li>
-        <li class="navbar-link"><a href="index.html#trading">Trading</a></li>
+        <li class="navbar-link"><?= $this->Html->link('Contact', ['controller' => 'Users', 'action' => 'support']) ?></li>
         <li class="navbar-link"><a href="index.html#bank">Central Bank</a></li>
         <li class="navbar-link"><a href="index.html#gameplay">Gameplay</a></li>
         <li class="navbar-link"><a href="index.html#developer">Developer</a></li>

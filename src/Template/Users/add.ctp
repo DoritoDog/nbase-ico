@@ -1,10 +1,6 @@
 <?= $this->Html->css('StyleSheet') ?>
 <?= $this->Html->script('register.js') ?>
 
-<div class="mt-4">
-    <?= $this->Html->link('Home', ['controller' => 'Pages'], ['class' => 'site-link ml-5']) ?>
-</div>
-
 <div>
     <h1 class="text-center grey mt-200">Sign up</h1>
     <p class="text-center w-75 mx-auto grey">In order to participate in the nBase ICO, please fill in the form with accurate details. Refer to <a class="site-link" href="#">this</a> blog post for detailed information regarding the whitelisting process.</p>

@@ -15,7 +15,7 @@ html, body {
 }
 
 .gold {
-  color: #ffa600;
+  color: #ffbb00;
 }
 
 .dark-gold {
@@ -548,10 +548,14 @@ iframe {
     margin: 0;
 }
 
-.footer-basic-centered .footer-links a{
+.footer-basic-centered .footer-links a {
     display:inline-block;
     text-decoration: none;
     color: inherit;
+}
+
+.footer-basic-centered .footer-links a:hover {
+  text-decoration: underline;
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
