@@ -60,6 +60,10 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
+  <script>
+  alert('top');
+  </script>
+
   <header id="top">
     <div class="navigation-bar animated fadeInUp">
       <ul>
@@ -288,6 +292,7 @@ $title = 'nBase | a Strategy Game With a Profitable Virtual Economy';
 
 <script>
 
+alert('end');
 $(window).scroll(function() {
 
   if ($(window).width() <= 549) {
