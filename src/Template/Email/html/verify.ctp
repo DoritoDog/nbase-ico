@@ -1,1 +1,1 @@
-<p><?= $verificationLink ?></p>
+<p><?= $verificationUrl ?></p>
