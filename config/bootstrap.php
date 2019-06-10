@@ -211,4 +211,4 @@ Configure::write('ico_end', 'July 7, 2019 (9:00AM GMT)');
 Configure::write('total_supply', '2000000000');
 Configure::write('soft_cap', '3000000');
 Configure::write('hard_cap', '5000000');
-Configure::write('terms_and_conditions_url', '#');
+Configure::write('terms_and_conditions_url', 'https://nbasemobile.io/Terms_and_conditions.pdf');

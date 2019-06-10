@@ -35,6 +35,8 @@ endif;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>nBase | a Strategy Game With an Advanced Virtual Economy</title>
+  <meta name="description" content="nBase is a match-based RTS game with an advanced economy built for making profit through crypto trading and investing. It is available on Google Play and involves real-time, multiplayer matches between friends with fast paced gameplay (60 seconds is the max to build anything) and unique units. The graphics were designed with replicas of well-known vehicles such as the Nimitz class aircraft carrier and F-22 Raptor. The gameplay is inspired by games such as StarCraft and I believe that this style is lacking in the app stores.">
+  <meta name="keywords" content="nBase, nBase ICO, nbase, nbase ico, rts, virtual economy, mobile virtual economy, android rts">
 
   <link rel="stylesheet" href="css/style.css">
 
