@@ -107,12 +107,13 @@ endif;
     </div> -->
   </section>
 
-  <section id="sales" style="display: none;">
-    <h2 class="text-center large-title grey pb-5">Latest Sales</h2>
+  <section id="sales" class="clouds-bg py-5">
+    <div id="images-path" class="hidden"><?= 'http://' . env('SERVER_NAME') . '/nbase-ico' . '/img/items/' ?></div>
+      <h2 class="text-center large-title grey pb-5">Latest Sales</h2>
 
-    <div class="sales inline w-75 mx-auto" id="sales-parent">
+      <div class="sales inline w-75 mx-auto" id="sales-parent">
 
-    </div>
+      </div>
   </section>
 
   <section id="bank">
@@ -279,6 +280,7 @@ endif;
 </body>
 </html>
 
+<?= $this->Html->script('bignumber.js') ?>
 <script>
   
 $(window).scroll(function() {
@@ -300,73 +302,74 @@ if ($(window).width() <= 549) {
       $('#economy iframe').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 1400) {
+    if ($(window).scrollTop() > 2000) {
       $('#bank > h2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 1500) {
+    if ($(window).scrollTop() > 2100) {
       $('#bank p').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 1600) {
+    if ($(window).scrollTop() > 2200) {
       $('.bank-info > h2').addClass('fadeInDown');
       $('#bank .float-left').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 1700) {
+    if ($(window).scrollTop() > 2300) {
       $('#tab-1').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 1750) {
+    if ($(window).scrollTop() > 2350) {
       $('#tab-2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 1800) {
+    if ($(window).scrollTop() > 2400) {
       $('#tab-3').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 2000) {
+    if ($(window).scrollTop() > 2600) {
       $('#gameplay h2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 2100) {
+    if ($(window).scrollTop() > 2700) {
       $('#gameplay h5').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 2200) {
+    if ($(window).scrollTop() > 2800) {
       $('#gameplay img').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 2300) {
+    if ($(window).scrollTop() > 2900) {
       $('#gameplay p').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 2600) {
+    if ($(window).scrollTop() > 3000) {
       $('#ico-details').addClass('fadeInDown');
       $('#ico-stats').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 3000) {
+    if ($(window).scrollTop() > 3600) {
       $('#developer h2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 3100) {
+    if ($(window).scrollTop() > 3700) {
       $('#developer h3').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 3200) {
+    if ($(window).scrollTop() > 3800) {
       $('.dev-desc').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 3300) {
+    if ($(window).scrollTop() > 3900) {
       $('#developer .email').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 4200) {
+    if ($(window).scrollTop() > 4800) {
       $('#faq h2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 4000) {
+    if ($(window).scrollTop() > 4600) {
       $('#faq-1').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 4200) {
+    if ($(window).scrollTop() > 4800) {
       $('#faq-2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 4400) {
+    if ($(window).scrollTop() > 5000) {
       $('#faq-3').addClass('fadeInDown');
     }
 
   }
 });
 
+const decimals = new BigNumber('1000000000000000000');
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
@@ -377,14 +380,29 @@ if (this.readyState == 4 && this.status == 200) {
     parent.classList.add('sold-item');
 
     let img = document.createElement('img');
-    //img.src = "?= $images ?>" + soldItem.item_identifier + '.png';
+    img.src = $('#images-path').text() + soldItem.item_identifier + '.png';
     img.height = 200;
     parent.appendChild(img);
 
-    let h4 = document.createElement('h4');
-    h4.innerHTML = soldItem.item_identifier + ' <br> ' + `<small>${soldItem.address.substr(0, 12)}...</small>`;
-    h4.classList.add('text-center');
-    parent.appendChild(h4);
+    var options = {
+      timeZone: 'Europe/Bratislava',
+      hour: 'numeric', minute: 'numeric',
+    };
+    var formatter = new Intl.DateTimeFormat([], options);
+
+    let p = document.createElement('p');
+    p.innerHTML = '<b>' + soldItem.item_identifier.replace(/_/g,' ') + '</b>  <br>';
+    p.innerHTML += `<small><b>Sold to</b> ${soldItem.address.substr(0, 20)}...</small> <br>`;
+
+    let date = new Date(soldItem.updatedAt);
+    p.innerHTML += '@' + formatter.format(date) + '<br>';
+
+    var price = new BigNumber(soldItem.price).div(decimals);
+    p.innerHTML += 'For <span class="gold">' + `<b>${price.toString().substr(0, 5)}</b>` + ' CryptoGold</span>';
+    p.classList.add('text-center');
+    p.classList.add('grey');
+    p.classList.add('capitalize');
+    parent.appendChild(p);
 
     document.getElementById('sales-parent').appendChild(parent);
   });

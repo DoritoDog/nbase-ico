@@ -28,7 +28,7 @@
           <div class="ml-5" id="eth-balance"></div>
         </div>
       </div>
-
+      
       <h4 class="gold mt-5">Buy nBase CryptoGold</h4>
 
         <h5 class="gold mt-4">ICO Address</h5>

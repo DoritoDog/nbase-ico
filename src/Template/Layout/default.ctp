@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>nBase | a Strategy Game With an Advanced Virtual Economy</title>
-    <link rel="icon" href="<?= 'https://' . env('SERVER_NAME') . 'img/Icon.png' ?>">
+    <link rel="icon" href="<?= 'https://' . env('SERVER_NAME') . '/img/Icon.png' ?>">
 
     <!-- Bootstrap -->
     <?= $this->Html->css('bootstrap.css') ?>
