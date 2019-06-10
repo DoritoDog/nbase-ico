@@ -11,7 +11,7 @@
             
             $options = [
                 'type' => 'text', 'name' => 'eth_address', 'label' => false, 'class' => 'form-control dark-form-input', 'required' => true,
-                'placeholder' => '0x0bc9390ce3e6510ae6523e41bfbf290e317d56ec', 'value' => $user->eth_address
+                'placeholder' => '0x0bc9390ce3e6510ae6523e41bfbf290e317d56ec', 'value' => h($user->eth_address)
             ];
             echo $this->Form->control('', $options);
             ?>
@@ -77,7 +77,7 @@ function copy(element) {
 const decimals = new BigNumber('1000000000000000000');
 
 const contractAddress = '0xe056C79647dF965cbECe291998Dd8C238304726b';
-const accountAddress = '<?= $user->eth_address ?>';
+const accountAddress = '<?= h($user->eth_address) ?>';
 const ncgBalanceUrl = `https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=YourApiKeyToken`;
 const ethBalanceUrl = `https://api.etherscan.io/api?module=account&action=balance&address=${accountAddress}&tag=latest&apikey=YourApiKeyToken`;
 

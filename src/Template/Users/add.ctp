@@ -3,7 +3,7 @@
 
 <div>
     <h1 class="text-center grey mt-200">Sign up</h1>
-    <p class="text-center w-75 mx-auto grey">In order to participate in the nBase ICO, please fill in the form with accurate details. Refer to <a class="site-link" href="#">this</a> blog post for detailed information regarding the whitelisting process.</p>
+    <p class="text-center w-75 mx-auto grey">In order to participate in the nBase ICO, please fill in the form with accurate details.</p>
 
     <?= $this->Form->create($user) ?>
     <div class="container">
@@ -83,7 +83,7 @@
         <div class="form-check">
             <label class="form-check-label grey">
                 <input class="form-check-input" type="checkbox" onchange="toggleSubmit()">
-                I agree with the <a class="site-link" href="#">Terms and Conditions.</a>
+                I agree with the <a class="site-link" href="<?= $termsUrl ?>">Terms and Conditions.</a>
             </label>
         </div>
         <?php

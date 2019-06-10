@@ -73,6 +73,7 @@ class UsersController extends AppController
 
         $this->set('user', $user);
         $this->set('countries', $countries);
+        parent::setGlobalVars();
     }
 
     public function verify($code = null) {

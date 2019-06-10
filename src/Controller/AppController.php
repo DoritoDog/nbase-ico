@@ -64,6 +64,8 @@ class AppController extends Controller
             ],
             'storage' => 'Session'
         ]);
+
+        $this->loadComponent('Security');
     }
 
     public function beforeFilter(Event $event)
@@ -82,6 +84,7 @@ class AppController extends Controller
         $totalSupply = Configure::read('total_supply');
         $softCap = Configure::read('soft_cap');
         $hardCap = Configure::read('hard_cap');
+        $termsUrl = Configure::read('terms_and_conditions_url');
 
         $this->set('tokenName', $tokenName);
         $this->set('tokenAbbreviation', $tokenAbbreviation);
@@ -92,5 +95,6 @@ class AppController extends Controller
         $this->set('totalSupply', $totalSupply);
         $this->set('softCap', $softCap);
         $this->set('hardCap', $hardCap);
+        $this->set('termsUrl', $termsUrl);
     }
 }
