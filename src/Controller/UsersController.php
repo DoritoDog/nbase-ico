@@ -70,23 +70,18 @@ class UsersController extends AppController
     }
 
     public function verify($code = null) {
-        var_dump($this->request->getData());
-        
-        /*if ($code) {
+        if ($code) {
             $condition =  ['verification_code' => $code];
             $query = $this->Users->find('all', ['conditions' => $condition]);
             $user = $query->first();
             if ($user) {
-                if (!empty($this->request->getData())) {
-                    $this->request->getData()['code'] = null;
-                    $user = $this->Users->patchEntity($user, $this->request->getData());
-                    $user->verified = 1;
-                    if ($this->Users->save($user)) {
-                        $this->Flash->set(__('Your account has been verified and was successfully activated.'));
-                        return $this->redirect(array('action' => 'login'));
-                    } else {
-                        $this->Flash->error(__('An error occoured while activating your account. Please, try again.'));
-                    }
+                $user->verified = 1;
+                $user->verification_code = '';
+                if ($this->Users->save($user)) {
+                    $this->Flash->set(__('Your account has been verified and was successfully activated.'));
+                    return $this->redirect(array('action' => 'login'));
+                } else {
+                    $this->Flash->error(__('An error occoured while activating your account. Please, try again.'));
                 }
             } else {
                 $this->Flash->error('Invalid or expired code. Please check your email or try again.');
@@ -94,7 +89,7 @@ class UsersController extends AppController
             }
             unset($user->password);
             $this->set(compact('user'));
-        }*/
+        }
     }
 
     public function login() {
