@@ -100,7 +100,7 @@ class UsersController extends AppController
 
     public function nonVerified() {
         $user = $this->Users->get($this->Auth->user('id'));
-        if ($user->verified) {
+        if ($user && $user->verified) {
             return $this->redirect(['action' => 'index']);
         }
     }
