@@ -180,29 +180,30 @@ endif;
     <p class="grey w-75 mx-auto mt-5 text-center animated">"The current state of mobile gaming is such that most RTS games are exact copies of each other, just in a different theme. Their business model is based on making players wait hours or even days for buildings to be completed/upgraded unless they pay a fee to have it done instantly. <u>I built nBase with fast-paced and dynamic gameplay where buildings are constructed during matches.</u>"</p>
   </section>
 
+<?php $formatter = new NumberFormatter("en", NumberFormatter::SPELLOUT); ?>
   <section id="ico">
     <div class="container grey">
       <div class="row" id="ico-details-row">
         <div class="col-lg-6 centered-content">
           <div class="animated" id="ico-details">
             <h2 class="ml-4">Initial Coin Offering</h2>
-            <ul style="font-size: 20px;">
-                <li>Token name - nBase CryptoGold (NCG)</li>
-                <li><a class="site-link" href="#">Contract</a></li>
-                <li>Start - June 7, 2019 (9:00AM GMT)</li>
-                <li>End - July 7, 2019 (11:00AM GMT)</li>
+            <ul>
+                <li>Token name - <?= $tokenName ?></li>
+                <li><a class="site-link" href="https://etherscan.io/address/<?= $tokenAddress ?>#contracts">Contract</a></li>
+                <li>Start - <?= $icoStart ?></li>
+                <li>End - <?= $icoEnd ?></li>
                 <li>Accepted currency - Ethereum</li>
-                <li>Total amount of tokens - 500 million</li>
-                <li>Softcap - $3,000,000</li>
-                <li>Hardcap - $5,000,000</li>
+                <li class="capitalize">Total supply - <?= $formatter->format($totalSupply) ?></li>
+                <li class="capitalize">Softcap - <?= $formatter->format($softCap) ?></li>
+                <li class="capitalize">Hardcap - <?= $formatter->format($hardCap) ?></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-6 inline centered-content animated" id="ico-stats">
           <img src="img/side-stats.png" alt="ICO Icons">
           <div id="side-stats-text" class="ml-3">
-            <h4 class="text-center py-5">ICO Participants <br> <small>0</small></h4>
-            <h4 class="text-center py-5">Market Price <br> <small>0.00 BTC</small></h4>
+            <h4 class="text-center py-5">ICO Participants <br> <small><?= $icoParticipants ?></small></h4>
+            <h4 class="text-center py-5">Market Price <br> <small>0.00 USD</small></h4>
             <h4 class="text-center py-5">Whitepaper <br> <small><a class="site-link" href="Whitepaper.pdf">PDF</a></small></h4>
           </div>
         </div>
@@ -213,7 +214,7 @@ endif;
   <section id="developer">
     <div class="dev-info">
       <h2 class="animated">About the Developer</h2>
-      <h3 class="animated"><small>Kareem Belgharbi <a class="site-link" href="https://kareem.belgharbi.com/">(kareem.belgharbi.com)</a></small></h3>
+      <h3 class="animated"><small>Kareem Belgharbi</a></small></h3>
       <p class=" dev-desc animated">My name is Kareem, I'm a full-stack web, Ethereum, and mobile game developer. I was born in the United States but I currently live in Slovakia. I developed the game nBase, including the graphics, server-side programming, smart contract, and gameplay. I am currently also working on another project, which is an augumented reality game that is currently in beta. If you have any questions or would like to get in contact with me, please don't hesitate to check me out on social media, email, or any other contact!</p>
 
       <p class="mt-5 email animated"><span class="fa fa-envelope"></span> kareembelgharbi@gmail.com</p>

@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -68,5 +69,28 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {
         $this->Auth->allow(['display']);
+    }
+
+    public function setGlobalVars()
+    {
+        $tokenName = Configure::read('token_name');
+        $tokenAbbreviation = Configure::read('token_abbreviation');
+        $tokenAddress = Configure::read('token_address');
+        $icoAddress = Configure::read('ico_address');
+        $icoStart = Configure::read('ico_start');
+        $icoEnd = Configure::read('ico_end');
+        $totalSupply = Configure::read('total_supply');
+        $softCap = Configure::read('soft_cap');
+        $hardCap = Configure::read('hard_cap');
+
+        $this->set('tokenName', $tokenName);
+        $this->set('tokenAbbreviation', $tokenAbbreviation);
+        $this->set('tokenAddress', $tokenAddress);
+        $this->set('icoAddress', $icoAddress);
+        $this->set('icoStart', $icoStart);
+        $this->set('icoEnd', $icoEnd);
+        $this->set('totalSupply', $totalSupply);
+        $this->set('softCap', $softCap);
+        $this->set('hardCap', $hardCap);
     }
 }

@@ -38,6 +38,8 @@ class UsersController extends AppController
         }
 
         $this->set('user', $user);
+
+        parent::setGlobalVars();
     }
 
     public function add()
@@ -48,8 +50,9 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Your account has been created successfully.'));
 
-                $dashboardUrl = Router::url(['action' => 'index']);
-                $this->getMailer('User')->send('welcome', [$user, $dashboardUrl]);
+                $verificationCode = bin2hex(random_bytes(40));
+                $verificationLink = Router::url(['controller' => 'Users', 'action' => 'verify', $verificationCode, '_full' => true]);
+                $this->getMailer('User')->send('welcome', [$user, $verificationLink]);
                 
                 $user = $this->Auth->identify();
                 if ($user) {
@@ -64,6 +67,34 @@ class UsersController extends AppController
 
         $this->set('user', $user);
         $this->set('countries', $countries);
+    }
+
+    public function verify($code = null) {
+        var_dump($this->request->getData());
+        
+        /*if ($code) {
+            $condition =  ['verification_code' => $code];
+            $query = $this->Users->find('all', ['conditions' => $condition]);
+            $user = $query->first();
+            if ($user) {
+                if (!empty($this->request->getData())) {
+                    $this->request->getData()['code'] = null;
+                    $user = $this->Users->patchEntity($user, $this->request->getData());
+                    $user->verified = 1;
+                    if ($this->Users->save($user)) {
+                        $this->Flash->set(__('Your account has been verified and was successfully activated.'));
+                        return $this->redirect(array('action' => 'login'));
+                    } else {
+                        $this->Flash->error(__('An error occoured while activating your account. Please, try again.'));
+                    }
+                }
+            } else {
+                $this->Flash->error('Invalid or expired code. Please check your email or try again.');
+                $this->redirect(['action' => 'resetPassword']);
+            }
+            unset($user->password);
+            $this->set(compact('user'));
+        }*/
     }
 
     public function login() {

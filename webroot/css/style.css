@@ -416,6 +416,10 @@ iframe {
   color: red;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 /* #endregion */
 
 /* #region Central Bank */

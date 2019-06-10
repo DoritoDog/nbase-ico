@@ -201,3 +201,13 @@ Type::build('timestamp')
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
+
+Configure::write('token_name', 'nBase CryptoGold');
+Configure::write('token_abbreviation', 'NCG');
+Configure::write('token_address', '0x0bc9390ce3e6510ae6523e41bfbf290e317d56ec');
+Configure::write('ico_address', '0x0bc9390ce3e6510ae6523e41bfbf290e317d56ec');
+Configure::write('ico_start', 'June 7, 2019 (9:00AM GMT)');
+Configure::write('ico_end', 'July 7, 2019 (9:00AM GMT)');
+Configure::write('total_supply', '2000000000');
+Configure::write('soft_cap', '3000000');
+Configure::write('hard_cap', '5000000');

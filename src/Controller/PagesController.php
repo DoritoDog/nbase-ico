@@ -18,6 +18,7 @@ use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\ORM\TableRegistry;
 
 /**
  * Static content controller
@@ -42,6 +43,11 @@ class PagesController extends AppController
     {
         $images = WWW_ROOT . "img\items\\";
         $this->set('images', $images);
+
+        parent::setGlobalVars();
+
+        $icoParticipants = TableRegistry::get('Users')->find()->count();
+        $this->set('icoParticipants', $icoParticipants);
 
         $count = count($path);
         if (!$count) {

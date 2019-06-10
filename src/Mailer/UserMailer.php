@@ -5,13 +5,13 @@ use Cake\Mailer\Mailer;
 
 class UserMailer extends Mailer
 {
-    public function welcome($user, $dashboardUrl)
+    public function verify($user, $verificationUrl)
     {
         $this->setTo($user->email)
             ->setProfile('default')
             ->setSubject(sprintf('Welcome %s', $user->first_name))
             ->setEmailFormat('html')
-            ->setViewVars(['firstName' => $user->first_name, 'dashboardUrl' => $dashboardUrl]);
+            ->setViewVars(['firstName' => $user->first_name, $verificationUrl]);
     }
 
     public function resetPassword($user, $url)

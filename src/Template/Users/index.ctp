@@ -20,12 +20,12 @@
         <?= $this->Form->end() ?>
 
         <div class="inline grey">
-          <div class="mr-5">NCG Balance</div>
-          <div class="ml-5" id="ncg-balance">128.36</div>
+          <div class="mr-5"><?= $tokenAbbreviation ?> Balance</div>
+          <div class="ml-5" id="ncg-balance"></div>
         </div>
         <div class="inline grey">
           <div class="mr-5">ETH Balance</div>
-          <div class="ml-5" id="eth-balance">128.36</div>
+          <div class="ml-5" id="eth-balance"></div>
         </div>
       </div>
 
@@ -33,25 +33,27 @@
 
         <h5 class="gold mt-4">ICO Address</h5>
         <div class="inline">
-          <span class="grey round-bg" id="ico-address">0x0bc9390ce3e6510ae6523e41bfbf290e317d56ec</span>
+          <span class="grey round-bg" id="ico-address"><?= $icoAddress ?></span>
           <span class="ml-2 mt-1 grey font-weight-bold copy-btn" onclick="copy('#ico-address')">Copy</span>
         </div>
 
         <p class="grey mt-3">To take part in the nBase ICO, please send ETH to this address. Your transaction may take several minutes to be confirmed.</p>
     </div>
+
+    <?php $formatter = new NumberFormatter("en_US", NumberFormatter::GROUPING_USED); ?>
     <div class="col-lg-4">
       <h3 class="gold">ICO Details</h3>
       <ul class="grey ico-details-list">
-        <li>Token name - nBase CryptoGold</li>
-        <li>Abbreviation - NCG</li>
-        <li><a class="site-link" href="#">Smart Contract</a></li>
+        <li>Token name - <?= $tokenName ?></li>
+        <li>Abbreviation - <?= $tokenAbbreviation ?></li>
+        <li><a class="site-link" href="https://etherscan.io/address/<?= $tokenAddress ?>#contracts">Smart Contract</a></li>
         <li>Price - $0.03-0.12</li>
-        <li>Start - June 7, 2019 (9:00AM GMT)</li>
-        <li>End - July 7, 2019 (11:00AM GMT)</li>
+        <li>Start - <?= $icoStart ?></li>
+        <li>End - <?= $icoEnd ?></li>
         <li>Accepted currency - Ethereum</li>
-        <li>Total amount of tokens - 500 million</li>
-        <li>Softcap - $3,000,000</li>
-        <li>Hardcap - $5,000,000</li>
+        <li>Total supply - <span class="capitalize"><?= $formatter->format($totalSupply) ?></span></li>
+        <li>Softcap - $<span class="capitalize"><?= $formatter->format($softCap) ?></span></li>
+        <li>Hardcap - $<span class="capitalize"><?= $formatter->format($hardCap) ?></span></li>
         <li>Platform - Ethereum</li>
         <li><br></li>
         <li>KYC - KYC Required</li>

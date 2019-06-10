@@ -37,7 +37,9 @@ class User extends Entity
         'created' => true,
         'country_id' => true,
         'passkey' => true,
-        'timeout' => true
+        'timeout' => true,
+        'verified' => true,
+        'verification_code' => true
     ];
 
     /**
