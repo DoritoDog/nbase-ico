@@ -116,6 +116,7 @@ class UsersController extends AppController
 
                 $verificationLink = Router::url(['controller' => 'Users', 'action' => 'verify', $verificationCode, '_full' => true]);
                 $this->getMailer('User')->send('verify', [$user, $verificationLink]);
+                return $this->redirect(['action' => 'nonVerified']);
             }
         }
         else if (!$user) {
