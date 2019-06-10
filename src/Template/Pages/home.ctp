@@ -108,7 +108,7 @@ endif;
   </section>
 
   <section id="sales" class="clouds-bg py-5">
-    <div id="images-path" class="hidden"><?= 'http://' . env('SERVER_NAME') . '/nbase-ico' . '/img/items/' ?></div>
+    <div id="images-path" class="hidden"><?= 'https://' . env('SERVER_NAME') . '/img/items/' ?></div>
       <h2 class="text-center large-title grey pb-5">Latest Sales</h2>
 
       <div class="sales inline w-75 mx-auto" id="sales-parent">
