@@ -52,7 +52,7 @@ class UsersController extends AppController
 
                 $verificationCode = bin2hex(random_bytes(40));
                 $verificationLink = Router::url(['controller' => 'Users', 'action' => 'verify', $verificationCode, '_full' => true]);
-                $this->getMailer('User')->send('welcome', [$user, $verificationLink]);
+                $this->getMailer('User')->send('verify', [$user, $verificationLink]);
                 
                 $user = $this->Auth->identify();
                 if ($user) {
