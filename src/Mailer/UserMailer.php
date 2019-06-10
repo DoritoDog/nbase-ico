@@ -11,7 +11,7 @@ class UserMailer extends Mailer
             ->setProfile('default')
             ->setSubject(sprintf('Welcome %s', $user->first_name))
             ->setEmailFormat('html')
-            ->setViewVars(['firstName' => $user->first_name, $verificationUrl]);
+            ->setViewVars(['firstName' => $user->first_name, 'verificationUrl' => $verificationUrl]);
     }
 
     public function resetPassword($user, $url)
