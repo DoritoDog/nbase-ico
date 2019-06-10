@@ -85,7 +85,7 @@ class UsersController extends AppController
                 $user->verification_code = '';
                 if ($this->Users->save($user)) {
                     $this->Flash->set(__('Your account has been verified and was successfully activated.'));
-                    return $this->redirect(array('action' => 'login'));
+                    return $this->redirect(['action' => 'index']);
                 } else {
                     $this->Flash->error(__('An error occoured while activating your account. Please, try again.'));
                 }
@@ -102,6 +102,25 @@ class UsersController extends AppController
         $user = $this->Users->get($this->Auth->user('id'));
         if ($user && $user->verified) {
             return $this->redirect(['action' => 'index']);
+        }
+    }
+
+    public function resendVerificationCode() {
+        $user = $this->Users->get($this->Auth->user('id'));
+        if ($user && !$user->verified) {
+
+            $verificationCode = bin2hex(random_bytes(40));
+            $user->verification_code = $verificationCode;
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('An email has been sent you containing a verification URL.'));
+
+                $verificationLink = Router::url(['controller' => 'Users', 'action' => 'verify', $verificationCode, '_full' => true]);
+                $this->getMailer('User')->send('verify', [$user, $verificationLink]);
+            }
+        }
+        else if (!$user) {
+            $this->Flash->set(__('Please log in first.'));
+            return $this->redirect(['action' => 'login']);
         }
     }
 
