@@ -1,17 +1,21 @@
 /* #region Top */
 
 html, body {
-  background: #000 !important;
+  background: #121212 !important;
   max-width: 100%;
   overflow-x: hidden;
 }
 
 .grey {
-  color: #9b9b9b;
+  color: #d3d3d3;
+}
+
+.dark-bg {
+  background: #121212;
 }
 
 .dark-grey {
-  color: #4b4b4b;
+  color: #8b8b8b;
 }
 
 .gold {
@@ -52,6 +56,31 @@ header {
 
 #ico-countdown {
   height: 50%;
+}
+
+.cta {
+  
+  padding: 10px 25px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #470000;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+.cta:hover {
+  transform: scale(0.9, 0.9);
+  color: #FFF;
+  text-decoration: none;
+  background-color: #6b0000;
+}
+
+.cta:focus {
+  outline: none;
+  border: none;
 }
 
 /* #endregion */
@@ -416,6 +445,11 @@ iframe {
   justify-content: center;
 }
 
+.inline-left {
+  display: flex;
+  flex-direction: row;
+}
+
 .mt-200 {
   margin-top: 200px;
 }
@@ -533,7 +567,7 @@ iframe {
 /* #region Footer */
 
 .footer-basic-centered{
-    background-color: #000;
+    background-color: #121212;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
@@ -690,18 +724,19 @@ iframe {
 }
 
 .dark-form-input {
-  background: #111111;
+  background: #2c2c2c;
   border: none;
-  color: #8d9093;
+  color: white;
 }
 
 .dark-form-input:focus {
-  background: #1d1d1d !important;
+  background: #2c2c2c !important;
+  color: white;
 }
 
 .dark-navbar {
-  background-color: #000000;
-  border-bottom: 3px solid #1d1d1d;
+  background-color: #121212;
+  border-bottom: 3px solid #424242;
   padding: 20px;
 }
 
@@ -718,13 +753,13 @@ iframe {
 }
 
 .copy-btn:hover {
-  color: #1d1d1d;
+  color: #2c2c2c;
 }
 
 .round-bg {
   padding: 5px 10px;
   border-radius: 5px;
-  background: #1d1d1d;
+  background: #2c2c2c;
 }
 
 /* #endregion */

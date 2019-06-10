@@ -57,17 +57,6 @@
                     ?>
                 </div>
                 <div class="form-group">
-                    <?php
-                    echo $this->Form->label('eth_address', 'Wallet address', ['class' => 'bold grey']);
-
-                    $options = [
-                        'name' => 'eth_address', 'class' => 'form-control dark-form-input', 'required' => true,
-                        'placeholder' => '0xea69757bee3c454AB364C41B26b4Bfe29fc94E89', 'label' => false
-                    ];
-                    echo $this->Form->control('eth_address', $options);
-                    ?>
-                </div>
-                <div class="form-group">
                     <?= $this->Form->label('country_id', 'Country', ['class' => 'bold grey']); ?>
                     <?php
                     $options = array();

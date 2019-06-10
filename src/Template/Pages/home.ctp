@@ -85,6 +85,10 @@ endif;
       <div class="header-text">
         <h3 class="ml-5 text-center animated fadeInDown">nBase <br> <small>A real-time strategy game with the most advanced virtual economy in mobile gaming</small></h3>
       </div>
+
+      <div class="w-100 centered-content mb-5">
+        <?= $this->Html->link('Join the ICO', ['controller' => 'Users', 'action' => 'add'], ['class' => 'cta mx-auto']) ?>
+      </div>
   
       <div id="ico-countdown" class="animated fadeInDown">
         
@@ -95,7 +99,7 @@ endif;
   <section id="economy" style="height: 100vh;">
     <h2 class="text-center pt-5 large-title grey animated" id="trading-1">You know how exciting it is to make profit from trading</h2>
     <h3 class="text-center dark-grey ubuntu animated" id="trading-2">Guess where that would be an amazing new concept...</h3>
-    <p class="w-50 mx-auto mt-5 dark-grey animated" id="trading-3">nBase is an <b>Android-based</b> real-time strategy game with a virtual economy that has been designed to empower players to trade and make profit. Players will not only feel a sense of reward through victories from playing the game, but also from smart trading and making money. The gameplay is inspired by games such as StarCraft and I believe that this style is lacking in the app stores.</p>
+    <p class="w-50 mx-auto mt-5 grey animated" id="trading-3">nBase is an <b>Android-based</b> real-time strategy game with a virtual economy that has been designed to empower players to trade and make profit. Players will not only feel a sense of reward through victories from playing the game, but also from smart trading and making money. The gameplay is inspired by games such as StarCraft and I believe that this style is lacking in the app stores.</p>
 
     <div class="w-100 h-100 centered-x">
       <iframe class="trading-video mx-auto animated" width="50%" height="50%" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/Ife-OhUrN9Q">
@@ -214,11 +218,11 @@ endif;
 
   <section id="developer">
     <div class="dev-info">
-      <h2 class="animated">About the Developer</h2>
-      <h3 class="animated"><small>Kareem Belgharbi</a></small></h3>
-      <p class=" dev-desc animated">My name is Kareem, I'm a full-stack web, Ethereum, and mobile game developer. I was born in the United States but I currently live in Slovakia. I developed the game nBase, including the graphics, server-side programming, smart contract, and gameplay. I am currently also working on another project, which is an augumented reality game that is currently in beta. If you have any questions or would like to get in contact with me, please don't hesitate to check me out on social media, email, or any other contact!</p>
+      <h2 class="animated grey">About the Developer</h2>
+      <h3 class="animated grey"><small>Kareem Belgharbi</a></small></h3>
+      <p class=" dev-desc animated grey">My name is Kareem, I'm a full-stack web, Ethereum, and mobile game developer. I was born in the United States but I currently live in Slovakia. I developed the game nBase, including the graphics, server-side programming, smart contract, and gameplay. I am currently also working on another project, which is an augumented reality game that is currently in beta. If you have any questions or would like to get in contact with me, please don't hesitate to check me out on social media, email, or any other contact!</p>
 
-      <p class="mt-5 email animated"><span class="fa fa-envelope"></span> admin@nbasemobile.io</p>
+      <p class="mt-5 email animated grey"><span class="fa fa-envelope"></span> admin@nbasemobile.io</p>
   </section>
 
   <section class="clouds-bg grey py-5" id="faq">
@@ -411,3 +415,13 @@ if (this.readyState == 4 && this.status == 200) {
 xhttp.open("POST", "https://api.nbase.belgharbi.com/lastSolds", true);
 xhttp.send();
 </script>
+
+<style>
+
+html, body {
+  background: #000 !important;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+</style>

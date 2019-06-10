@@ -1,9 +1,9 @@
-<h2 class="text-center mb-4 grey">Sign in</h2>
+<h2 class="text-center my-4 grey">Sign in</h2>
 <div class="w-100 mx-auto">
     <?= $this->Form->create() ?>
     <div class="form-group mx-auto w-75 login-field">
         <?php
-        echo $this->Form->label('email', 'Email', ['style' => 'font-weight:bold', 'class' => 'grey']);
+        echo $this->Form->label('email', 'Email', ['style' => 'font-weight:bold', 'class' => 'white']);
 
         $options = [
             'type' => 'text', 'name' => 'email', 'label' => false,
@@ -14,7 +14,7 @@
     </div>
     <div class="form-group mx-auto w-75 login-field">
         <?php
-        echo $this->Form->label('password', 'Password', ['style' => 'font-weight:bold', 'class' => 'grey']);
+        echo $this->Form->label('password', 'Password', ['style' => 'font-weight:bold', 'class' => 'white']);
         
         $options = [
             'type' => 'password', 'name' => 'password', 'label' => false,

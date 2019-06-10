@@ -11,7 +11,7 @@
             
             $options = [
                 'type' => 'text', 'name' => 'eth_address', 'label' => false, 'class' => 'form-control dark-form-input', 'required' => true,
-                'placeholder' => '0x0bc9390ce3e6510ae6523e41bfbf290e317d56ec', 'value' => h($user->eth_address)
+                'value' => h($user->eth_address)
             ];
             echo $this->Form->control('', $options);
             ?>
@@ -32,8 +32,8 @@
       <h4 class="gold mt-5">Buy nBase CryptoGold</h4>
 
         <h5 class="gold mt-4">ICO Address</h5>
-        <div class="inline">
-          <span class="grey round-bg" id="ico-address"><?= $icoAddress ?></span>
+        <div class="inline-left">
+          <span class="white round-bg" id="ico-address"><?= $icoAddress ?></span>
           <span class="ml-2 mt-1 grey font-weight-bold copy-btn" onclick="copy('#ico-address')">Copy</span>
         </div>
 
