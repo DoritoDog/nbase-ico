@@ -1,0 +1,1 @@
+<p class="grey text-center mt-5">Please verify your account with the URL sent to your email to proceed.</p>

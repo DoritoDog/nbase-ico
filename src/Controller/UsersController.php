@@ -22,12 +22,15 @@ class UsersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'logout', 'support', 'reset', 'forgotPassword']);
+        $this->Auth->allow(['add', 'logout', 'support', 'reset', 'forgotPassword', 'verify', 'nonVerified']);
     }
 
     public function index()
     {
         $user = $this->Users->get($this->Auth->user('id'));
+        if (!$user->verified) {
+            return $this->redirect(['action' => 'nonVerified']);
+        }
 
         $dashboardUrl = Router::url(['action' => 'index']);
         $newsUrl = Router::url(['action' => 'news']);
@@ -47,17 +50,20 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            $verificationCode = bin2hex(random_bytes(40));
+            $user->verification_code = $verificationCode;
+
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Your account has been created successfully.'));
 
-                $verificationCode = bin2hex(random_bytes(40));
                 $verificationLink = Router::url(['controller' => 'Users', 'action' => 'verify', $verificationCode, '_full' => true]);
                 $this->getMailer('User')->send('verify', [$user, $verificationLink]);
                 
                 $user = $this->Auth->identify();
                 if ($user) {
                     $this->Auth->setUser($user);
-                    return $this->redirect($this->Auth->redirectUrl());
+                    return $this->redirect(['action' => 'nonVerified']);
                 }
             }
             $this->Flash->error(__('An error occoured while registering your account, please try again later or notify our support.'));
@@ -85,10 +91,17 @@ class UsersController extends AppController
                 }
             } else {
                 $this->Flash->error('Invalid or expired code. Please check your email or try again.');
-                $this->redirect(['action' => 'resetPassword']);
+                $this->redirect(['action' => 'nonVerified']);
             }
             unset($user->password);
             $this->set(compact('user'));
+        }
+    }
+
+    public function nonVerified() {
+        $user = $this->Users->get($this->Auth->user('id'));
+        if ($user->verified) {
+            return $this->redirect(['action' => 'index']);
         }
     }
 
@@ -148,7 +161,7 @@ class UsersController extends AppController
                 }
             } else {
                 $this->Flash->error('Invalid or expired code. Please check your email or try again.');
-                $this->redirect(['action' => 'resetPassword']);
+                $this->redirect(['action' => 'forgotPassword']);
             }
             unset($user->password);
             $this->set(compact('user'));

@@ -217,7 +217,7 @@ endif;
       <h3 class="animated"><small>Kareem Belgharbi</a></small></h3>
       <p class=" dev-desc animated">My name is Kareem, I'm a full-stack web, Ethereum, and mobile game developer. I was born in the United States but I currently live in Slovakia. I developed the game nBase, including the graphics, server-side programming, smart contract, and gameplay. I am currently also working on another project, which is an augumented reality game that is currently in beta. If you have any questions or would like to get in contact with me, please don't hesitate to check me out on social media, email, or any other contact!</p>
 
-      <p class="mt-5 email animated"><span class="fa fa-envelope"></span> kareembelgharbi@gmail.com</p>
+      <p class="mt-5 email animated"><span class="fa fa-envelope"></span> admin@nbasemobile.io</p>
   </section>
 
   <section class="clouds-bg grey py-5" id="faq">
