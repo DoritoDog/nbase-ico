@@ -487,9 +487,9 @@ iframe {
 /* #region Developer */
 
 #developer {
-  background-image: url('../img/OrangeBG.png');
+  /* background-image: url('../img/OrangeBG.png');
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
 
   height: 70vh;
 }
