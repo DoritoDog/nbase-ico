@@ -166,7 +166,7 @@ $this->layout = false;
   </section>
 
   <section class="pb-5" id="rts">
-    <h2 class="text-center large-title grey animated">Anyone remember the <span class="gold">golden</span> age of strategy games?</h2>
+    <h2 class="text-center large-title grey animated">Anyone remember the <span class="gold">golden</span> age of strategy games? Well, nBase does...</h2>
     <h5 class="text-center dark-grey mt-3 animated">I'm talking about the classic titles, where you had to actually have a <i>strategy</i> to play. And I can't seem to find that on mobile today...</h5>
 
     <div class="container">
@@ -233,7 +233,7 @@ $this->layout = false;
       <div class="row animated" id="faq-1">
         <div class="col-lg-6">
           <h3>Is nBase a crypto exchange?</h3>
-          <p>No, it is a game where you can also trade items for cryptocurrencies. The game was designed to fun and profitable for the player, with the ability to trade and invest in items for profit.</p>
+          <p>No, it is a game where you can also trade items for cryptocurrencies. It is in the RTS (real-time strategy) genre and currently has one crypto token (NCG).</p>
         </div>
         <div class="col-lg-6">
           <h3>What is CryptoGold?</h3>

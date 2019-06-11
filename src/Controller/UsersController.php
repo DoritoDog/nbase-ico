@@ -44,7 +44,7 @@ class UsersController extends AppController
         $this->set('user', $user);
         parent::setGlobalVars();
 
-        $this->layout = 'sidebar';
+        $this->viewBuilder()->setLayout('sidebar');
     }
 
     public function add()
@@ -199,7 +199,7 @@ class UsersController extends AppController
         $this->set('msg', $msg);
 
         if ($this->Auth->user())
-            $this->layout = 'sidebar';
+            $this->viewBuilder()->setLayout('sidebar');
 
         if ($this->request->is('post')) {
             $msg = $contactTable->patchEntity($msg, $this->request->getData());
@@ -229,6 +229,6 @@ class UsersController extends AppController
         $this->set('user', $user);
         $this->set('countries', $countries);
 
-        $this->layout = 'sidebar';
+        $this->viewBuilder()->setLayout('sidebar');
     }
 }
