@@ -160,8 +160,8 @@ $this->layout = false;
     </video>
 
     <div class="video-overlay text-center white py-5">
-      <h2 class="text-center large-title">But in order to have a powerful economy, the actual gameplay has to be fun</h2>
-      <p class="text-center mt-3 w-50-resp mx-auto">If nBase was only about trading then players would get bored as they would have little use for the items that they are acquiring. nBase is a fully-featured strategy game based on classic titles such as StarCraft. It multiplayer matches between friends with fast paced gameplay (60 seconds is the max to build anything) and unique units. The graphics were designed with replicas of well-known vehicles such as the Nimitz class aircraft carrier and F-22 Raptor.</p>
+      <h2 class="text-center large-title animated">But in order to have a powerful economy, the actual gameplay has to be fun</h2>
+      <p class="text-center mt-3 w-50-resp mx-auto animated">If nBase was only about trading then players would get bored as they would have little use for the items that they are acquiring. nBase is a fully-featured strategy game based on classic titles such as StarCraft. It multiplayer matches between friends with fast paced gameplay (60 seconds is the max to build anything) and unique units. The graphics were designed with replicas of well-known vehicles such as the Nimitz class aircraft carrier and F-22 Raptor.</p>
     </div>
   </section>
 
@@ -218,10 +218,10 @@ $this->layout = false;
   </section>
 
   <section id="developer">
-    <div class="dev-info">
+    <div class="text-center">
       <h2 class="animated grey">About the Developer</h2>
-      <h3 class="animated grey"><small>Kareem Belgharbi</a></small></h3>
-      <p class=" dev-desc animated grey">My name is Kareem, I'm a full-stack web, Ethereum, and mobile game developer. I was born in the United States but I currently live in Slovakia. I developed the game nBase, including the graphics, server-side programming, smart contract, and gameplay. I am currently also working on another project, which is an augumented reality game that is currently in beta. If you have any questions or would like to get in contact with me, please don't hesitate to check me out on social media, email, or any other contact!</p>
+      <h3 class="animated grey gold"><small>Kareem Belgharbi</a></small></h3>
+      <p class=" dev-desc animated grey text-center mx-auto">nBase has been developed by a young and talented game, full-stack web and Ethereum programmer. He is an avid player and innovator fluent in 7 programming languages, and keen on strategy games where one gets to prove their true tactical superiority. As the sole developer of nBase, CryptoGold, nTag, and 8 websites,  Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. He also has another project currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
 
       <p class="mt-5 email animated grey"><span class="fa fa-envelope"></span> admin@nbasemobile.io</p>
   </section>
@@ -233,7 +233,7 @@ $this->layout = false;
       <div class="row animated" id="faq-1">
         <div class="col-lg-6">
           <h3>Is nBase a crypto exchange?</h3>
-          <p>No, it is a game where you can also trade items for cryptocurrencies. It is in the RTS (real-time strategy) genre and currently has one crypto token (NCG).</p>
+          <p>No, it is a game where you can also trade items for cryptocurrencies. It is in the RTS (real-time strategy) genre and currently has uses a crypto token (NCG) as it's currency for trading items.</p>
         </div>
         <div class="col-lg-6">
           <h3>What is CryptoGold?</h3>
@@ -242,12 +242,12 @@ $this->layout = false;
       </div>
       <div class="row animated" id="faq-2">
         <div class="col-lg-6">
-          <h3>Was this game made by a team?</h3>
-          <p>No, it was developed by me without a team apart from user testing. I believe that there is space in the gaming world for one-man projects with a clear vision and working product. However, I am considering creating a team.</p>
+          <h3>Who's the developer?</h3>
+          <p>nBase has been developed by a young and talented game, full-stack web and Ethereum programmer. He is an avid player and innovator fluent in 7 programming languages, and keen on strategy games where one gets to prove their true tactical superiority. As the sole developer of nBase, CryptoGold, nTag, and 8 websites,  Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. He also has another project currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
         </div>
         <div class="col-lg-6">
           <h3>Does it already work? Can I try it?</h3>
-          <p>Yes, the game is working and can be found on <a class="site-link" href="https://play.google.com/store/apps/details?id=com.warbase.android&hl=en_US.">here</a> on Google Play. There are still improvements that I would like to make, especially based on community feedback. The main areas I would like to improve are the graphics, adding more units, more item effects/variations, and security updates.</p>
+          <p>Feel free! The game is available <a class="site-link" href="https://play.google.com/store/apps/details?id=com.warbase.android&hl=en_US.">here</a> on Google Play. There are still improvements that I would like to make, especially based on community feedback. The main areas I would like to improve are the graphics, adding more units, more item effects/variations, and security updates.</p>
         </div>
       </div>
       <div class="row mt-5 animated" id="faq-3">
@@ -287,8 +287,39 @@ $this->layout = false;
 
 <?= $this->Html->script('bignumber.js') ?>
 <script>
+
+var animateHTML = function() {
+  var elems;
+  var windowHeight;
+  var revealedElements = [];
+  var offset = 5000;
+  function init() {
+    elems = document.getElementsByClassName('animated');
+    windowHeight = window.innerHeight;
+    addEventHandlers();
+    checkPosition();
+  }
+  function addEventHandlers() {
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', init);
+  }
+  function checkPosition() {
+    for (var i = 0; i < elems.length; i++) {
+      var positionFromTop = elems[i].getBoundingClientRect().top;
+      if (positionFromTop - windowHeight <= 0 && !revealedElements.includes(elems[i])) {
+        elems[i].classList.add('fadeInDown');
+        revealedElements.push(elems[i]);
+      }
+    }
+  }
+  return {
+    init: init
+  };
+}
+
+animateHTML().init();
   
-$(window).scroll(function() {
+/*$(window).scroll(function() {
 
 if ($(window).width() <= 549) {
 
@@ -372,7 +403,7 @@ if ($(window).width() <= 549) {
     }
 
   }
-});
+});*/
 
 const decimals = new BigNumber('1000000000000000000');
 var xhttp = new XMLHttpRequest();
