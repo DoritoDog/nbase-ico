@@ -2,7 +2,7 @@
 <?= $this->Html->script('register.js') ?>
 
 <div>
-    <h1 class="text-center grey mt-200">Sign up</h1>
+    <h1 class="text-center grey my-5">Sign up</h1>
     <p class="text-center w-75 mx-auto grey">In order to participate in the nBase ICO, please fill in the form with accurate details.</p>
 
     <?= $this->Form->create($user) ?>
@@ -34,13 +34,13 @@
                 </div>
                 <div class="form-group">
                     <?php
-                    echo $this->Form->label('password', 'Password', ['class' => 'bold grey']);
+                    /*echo $this->Form->label('password', 'Password', ['class' => 'bold grey']);
                     
                     $options = [
                         'name' => 'password', 'class' => 'form-control dark-form-input', 'type' => 'password',
                         'required' => true, 'label' => false
                     ];
-                    echo $this->Form->control('password', $options);
+                    echo $this->Form->control('password', $options);*/
                     ?>
                 </div>
             </div>

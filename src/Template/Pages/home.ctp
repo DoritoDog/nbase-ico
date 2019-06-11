@@ -21,12 +21,6 @@ use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
 
-if (!Configure::read('debug')) :
-    throw new NotFoundException(
-        'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
-    );
-endif;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,19 +92,14 @@ endif;
     </div>
   </header>
 
-  <section id="economy" style="height: 100vh;">
+  <section id="economy" style="height: 100vh;" class="w-100 centered-x">
     <h2 class="text-center pt-5 large-title grey animated" id="trading-1">You know how exciting it is to make profit from trading</h2>
-    <h3 class="text-center dark-grey ubuntu animated" id="trading-2">Guess where that would be an amazing new concept...</h3>
-    <p class="w-50 mx-auto mt-5 grey animated" id="trading-3">nBase is an <b>Android-based</b> real-time strategy game with a virtual economy that has been designed to empower players to trade and make profit. Players will not only feel a sense of reward through victories from playing the game, but also from smart trading and making money. The gameplay is inspired by games such as StarCraft and I believe that this style is lacking in the app stores.</p>
+    <h2 class="text-center dark-grey ubuntu animated" id="trading-2">How about if someone made a game out of that?</h2>
+    <p class="w-50 mx-auto mt-5 grey animated" id="trading-3">nBase is a real-time strategy game available on Android with a virtual economy that contains the same market dynamics that real traders are used to. Players can invest in items, speculate on prices, negotiate deals, and more. Here it's not just about winning matches, it's also about making profit and increasing the real value of your inventory similar to trading on Steam.</p>
 
-    <div class="w-100 h-100 centered-x">
-      <iframe class="trading-video mx-auto animated" width="50%" height="50%" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/Ife-OhUrN9Q">
-      </iframe>
-    </div>
-
-    <!-- <div class="w-100">
-      <img class="mx-auto" src="img/Available-on-Google-Play.png" height="50" alt="Available on Google Play" onclick="location.href = 'https://play.google.com/store/apps/details?id=com.warbase.android&hl=en_US'">
-    </div> -->
+    <iframe class="mx-auto animated trading-video" width="50%" height="50%" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/Ife-OhUrN9Q">
+    </iframe>
+    <a class="site-link mx-auto mt-5" href="https://play.google.com/store/apps/details?id=com.warbase.android&hl=en_US">Check it out on Google Play</a>
   </section>
 
   <section id="sales" class="clouds-bg py-5">
@@ -121,6 +110,8 @@ endif;
 
       </div>
   </section>
+
+
 
   <section id="bank">
     <h2 class="text-center large-title grey mb-2 animated">What drives the economy?</h2>
@@ -160,15 +151,23 @@ endif;
             </div>
           </li>
         </ul>
-
-        
       </div>
     </div>
   </section>
 
-  <section class="py-5" id="gameplay">
+  <section id="gameplay">
+    <video autoplay loop muted src="img/Gameplay.mp4">
+    </video>
+
+    <div class="video-overlay text-center white py-5">
+      <h2 class="text-center large-title">But in order to have a powerful economy, the actual gameplay has to be fun</h2>
+      <p class="text-center mt-3 w-50-resp mx-auto">If nBase was only about trading then players would get bored as they would have little use for the items that they are acquiring. nBase is a fully-featured strategy game based on classic titles such as StarCraft. It multiplayer matches between friends with fast paced gameplay (60 seconds is the max to build anything) and unique units. The graphics were designed with replicas of well-known vehicles such as the Nimitz class aircraft carrier and F-22 Raptor.</p>
+    </div>
+  </section>
+
+  <section class="pb-5" id="rts">
     <h2 class="text-center large-title grey animated">Anyone remember the <span class="gold">golden</span> age of strategy games?</h2>
-    <h5 class="text-center dark-grey mt-3 animated">I'm talking about the classic titles, where you had to actually use your brain to play. And I can't seem to find that on mobile today...</h5>
+    <h5 class="text-center dark-grey mt-3 animated">I'm talking about the classic titles, where you had to actually have a <i>strategy</i> to play. And I can't seem to find that on mobile today...</h5>
 
     <div class="container">
       <div class="row">
@@ -176,18 +175,18 @@ endif;
             <?= $this->Html->image('StarCraftLogo.png', ['alt' => 'StarCraft', 'width' => 300, 'class' => 'mx-auto animated']) ?>
         </div>
         <div class="col-lg-4 centered-content">
-            <?= $this->Html->image('Age_of_Empires_II.png', ['alt' => 'StarCraft', 'width' => 300, 'class' => 'mx-auto animated']) ?>
+            <?= $this->Html->image('Age_of_Empires_II.png', ['alt' => 'Age of Empires', 'width' => 300, 'class' => 'mx-auto animated']) ?>
         </div>
         <div class="col-lg-4 centered-content">
-            <?= $this->Html->image('CommandAndConquerLogo.png', ['alt' => 'StarCraft', 'width' => 300, 'class' => 'mx-auto animated']) ?>
+            <?= $this->Html->image('CommandAndConquerLogo.png', ['alt' => 'Command and Conquer', 'width' => 300, 'class' => 'mx-auto animated']) ?>
         </div>
       </div>
     </div>
 
-    <p class="grey w-75 mx-auto mt-5 text-center animated">"The current state of mobile gaming is such that most RTS games are exact copies of each other, just in a different theme. Their business model is based on making players wait hours or even days for buildings to be completed/upgraded unless they pay a fee to have it done instantly. <u>I built nBase with fast-paced and dynamic gameplay where buildings are constructed during matches.</u>"</p>
+    <p class="grey w-75 mx-auto mt-5 text-center animated">"The current state of mobile gaming is such that most RTS games are exact copies of each other, just in a different theme. Our business model is based on <b>not</b> making players have to wait hours or even days for buildings to be completed/upgraded without paying a fee. I built nBase with <u>fast-paced and dynamic gameplay</u> where buildings are constructed during matches."</p>
   </section>
 
-<?php $formatter = new NumberFormatter("en", NumberFormatter::SPELLOUT); ?>
+  <?php $formatter = new NumberFormatter("en", NumberFormatter::SPELLOUT); ?>
   <section id="ico">
     <div class="container grey">
       <div class="row" id="ico-details-row">
@@ -233,8 +232,8 @@ endif;
     <div class="container">
       <div class="row animated" id="faq-1">
         <div class="col-lg-6">
-          <h3>Is nBase a game or crypto exchange?</h3>
-          <p>It is a game, where you can also trade items for cryptocurrencies. The game was designed to fun and profitable for the player, with the ability to trade and invest in items for profit.</p>
+          <h3>Is nBase a crypto exchange?</h3>
+          <p>No, it is a game where you can also trade items for cryptocurrencies. The game was designed to fun and profitable for the player, with the ability to trade and invest in items for profit.</p>
         </div>
         <div class="col-lg-6">
           <h3>What is CryptoGold?</h3>
@@ -260,28 +259,28 @@ endif;
     </div>
   </section>
 
-  <footer class="footer-basic-centered">
-    <p class="footer-company-motto">nBase 2019</p>
-    <p class="footer-links">
-        <?= $this->Html->link('nBase', ['controller' => 'Pages', 'action' => '#top']) ?>
-        ·
-        <?= $this->Html->link('Trading', ['controller' => 'Pages', 'action' => '#trading']) ?>
-        ·
-        <?= $this->Html->link('Central Bank', ['controller' => 'Pages', 'action' => '#bank']) ?>
-        ·
-        <?= $this->Html->link('Gameplay', ['controller' => 'Pages', 'action' => '#gameplay']) ?>
-        ·
-        <?= $this->Html->link('Developer', ['controller' => 'Pages', 'action' => '#developer']) ?>
-        ·
-        <?= $this->Html->link('ICO', ['controller' => 'Pages', 'action' => '#ico']) ?>
-        ·
-        <?= $this->Html->link('FAQ', ['controller' => 'Pages', 'action' => '#faq']) ?>
-        ·
-        <?= $this->Html->link('Sign Up', ['controller' => 'Users', 'action' => 'add']) ?>
-        ·
-        <?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?>
-        </p>
-    <p class="footer-company-name">Kareem Belgharbi</p>
+<footer class="footer-basic-centered">
+  <p class="footer-company-motto">nBase 2019</p>
+  <p class="footer-links">
+      <?= $this->Html->link('nBase', ['controller' => 'Pages', 'action' => '#top']) ?>
+      ·
+      <?= $this->Html->link('Trading', ['controller' => 'Pages', 'action' => '#trading']) ?>
+      ·
+      <?= $this->Html->link('Central Bank', ['controller' => 'Pages', 'action' => '#bank']) ?>
+      ·
+      <?= $this->Html->link('Gameplay', ['controller' => 'Pages', 'action' => '#gameplay']) ?>
+      ·
+      <?= $this->Html->link('Developer', ['controller' => 'Pages', 'action' => '#developer']) ?>
+      ·
+      <?= $this->Html->link('ICO', ['controller' => 'Pages', 'action' => '#ico']) ?>
+      ·
+      <?= $this->Html->link('FAQ', ['controller' => 'Pages', 'action' => '#faq']) ?>
+      ·
+      <?= $this->Html->link('Sign Up', ['controller' => 'Users', 'action' => 'add']) ?>
+      ·
+      <?= $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) ?>
+      </p>
+  <p class="footer-company-name">Kareem Belgharbi</p>
   </footer>
 </body>
 </html>
@@ -328,47 +327,47 @@ if ($(window).width() <= 549) {
       $('#tab-3').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 2600) {
-      $('#gameplay h2').addClass('fadeInDown');
+    if ($(window).scrollTop() > 3900) {
+      $('#rts h2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 2700) {
-      $('#gameplay h5').addClass('fadeInDown');
+    if ($(window).scrollTop() > 4000) {
+      $('#rts h5').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 2800) {
-      $('#gameplay img').addClass('fadeInDown');
+    if ($(window).scrollTop() > 4100) {
+      $('#rts img').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 2900) {
-      $('#gameplay p').addClass('fadeInDown');
+    if ($(window).scrollTop() > 4200) {
+      $('#rts p').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 3000) {
+    if ($(window).scrollTop() > 4600) {
       $('#ico-details').addClass('fadeInDown');
       $('#ico-stats').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 3600) {
+    if ($(window).scrollTop() > 5400) {
       $('#developer h2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 3700) {
+    if ($(window).scrollTop() > 5500) {
       $('#developer h3').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 3800) {
+    if ($(window).scrollTop() > 5600) {
       $('.dev-desc').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 3900) {
+    if ($(window).scrollTop() > 5700) {
       $('#developer .email').addClass('fadeInDown');
     }
 
-    if ($(window).scrollTop() > 4800) {
+    if ($(window).scrollTop() > 6000) {
       $('#faq h2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 4600) {
+    if ($(window).scrollTop() > 6100) {
       $('#faq-1').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 4800) {
+    if ($(window).scrollTop() > 6200) {
       $('#faq-2').addClass('fadeInDown');
     }
-    if ($(window).scrollTop() > 5000) {
+    if ($(window).scrollTop() > 6300) {
       $('#faq-3').addClass('fadeInDown');
     }
 

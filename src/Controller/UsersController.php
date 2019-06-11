@@ -7,6 +7,7 @@ use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
 use Cake\Mailer\Email;
 use Cake\Mailer\MailerAwareTrait;
+use Cake\Utility\Security;
 
 /**
  * Users Controller

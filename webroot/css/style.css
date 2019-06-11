@@ -15,7 +15,7 @@ html, body {
 }
 
 .dark-grey {
-  color: #8b8b8b;
+  color: #4d4d4d;
 }
 
 .gold {
@@ -362,8 +362,12 @@ section {
   margin-bottom: 100px;
 }
 
-#economy p {
+.font-20 {
   font-size: 20px;
+}
+
+.font-16 {
+  font-size: 16px;
 }
 
 .centered-content {
@@ -381,6 +385,7 @@ section {
 
 .centered-x {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -403,7 +408,8 @@ iframe {
 }
 
 .trading-video {
-  margin-bottom: 100px;
+  position: relative;
+  top: 0;
 }
 
 .large-title {
@@ -466,6 +472,10 @@ iframe {
   display: none;
 }
 
+.w-50-resp {
+  width: 50%;
+}
+
 /* #endregion */
 
 /* #region Central Bank */
@@ -514,6 +524,20 @@ iframe {
 
 .split > * {
   display: inline;
+}
+
+/* #endregion */
+
+/* #region Gameplay */
+
+.gameplay-video {
+  z-index: 0;
+}
+
+.video-overlay {
+  z-index: 1;
+  transform: translate(0, -700px) !important;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* #endregion */
@@ -720,6 +744,10 @@ iframe {
 
   .inline {
     flex-direction: column !important;
+  }
+
+  .w-50-resp {
+    width: 100% !important;
   }
 }
 
