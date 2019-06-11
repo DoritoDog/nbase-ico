@@ -183,7 +183,7 @@ $this->layout = false;
       </div>
     </div>
 
-    <p class="grey w-75 mx-auto mt-5 text-center animated">"The current state of mobile gaming is such that most RTS games are exact copies of each other, just in a different theme. Our business model is based on <b>not</b> making players have to wait hours or even days for buildings to be completed/upgraded without paying a fee. I built nBase with <u>fast-paced and dynamic gameplay</u> where buildings are constructed during matches."</p>
+    <p class="grey w-75 mx-auto mt-5 text-center animated">"The current state of mobile gaming is such that most RTS games are exact copies of each other, just in a different theme. A common business model is making players have to wait hours or even days for buildings to be completed/upgraded unless they pay a fee. I bult nBase with <u>fast-paced and dynamic gameplay</u> where buildings are constructed during matches."</p>
   </section>
 
   <?php $formatter = new NumberFormatter("en", NumberFormatter::SPELLOUT); ?>

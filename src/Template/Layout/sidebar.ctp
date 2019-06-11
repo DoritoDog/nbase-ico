@@ -36,6 +36,8 @@
     <?= $this->Html->script('jquery') ?>
     <?= $this->Html->script('bootstrap.min.js') ?>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
@@ -45,7 +47,57 @@
     <?= $this->Flash->render() ?>
     </div>
 
-    <?= $this->fetch('content') ?>
+    <div id="sidebar">
+        <h5>Dashboard
+        <button type="button" id="sidebarCollapse">
+            <span class="fa fa-navicon"><span>
+        </button>
+        </h5>
+        <ul class="list-unstyled">
+        <li>
+            <?php echo $this->Html->link(
+                $this->Html->tag('span', '', array('class' => 'fa fa-home')),
+                ['action' => 'index'],
+                ['escape' => FALSE]
+            ); ?>
+            <?= $this->Html->link('Home', ['action' => 'index'], ['class' => 'sidebar-link']) ?>
+        </li>
+        <li>
+            <?php
+            echo $this->Html->link(
+                $this->Html->tag('span', '', array('class' => 'fa fa-address-book')),
+                ['action' => 'support'],
+                ['escape' => FALSE]
+            );
+            ?>
+            <?= $this->Html->link('Support', ['action' => 'support'], ['class' => 'sidebar-link']) ?>
+        </li>
+        <li>
+            <?php
+            echo $this->Html->link(
+                $this->Html->tag('span', '', array('class' => 'fa fa-gear')),
+                ['action' => 'settings'],
+                ['escape' => FALSE]
+            );
+            ?>
+            <?= $this->Html->link('Settings', ['action' => 'settings'], ['class' => 'sidebar-link']) ?>
+        </li>
+        <li>
+            <?php
+            echo $this->Html->link(
+                $this->Html->tag('span', '', array('class' => 'fa fa-user')),
+                ['action' => 'logout'],
+                ['escape' => FALSE]
+            );
+            ?>
+            <?= $this->Html->link('Sign out', ['action' => 'logout'], ['class' => 'sidebar-link']) ?>
+        </li>
+        </ul>
+    </div>
+
+    <div class="sidebar-content">
+      <?= $this->fetch('content') ?>
+    </div>
 
     <footer class="footer-basic-centered">
 

@@ -42,8 +42,9 @@ class UsersController extends AppController
         }
 
         $this->set('user', $user);
-
         parent::setGlobalVars();
+
+        $this->layout = 'sidebar';
     }
 
     public function add()
@@ -197,6 +198,9 @@ class UsersController extends AppController
         $msg = $contactTable->newEntity();
         $this->set('msg', $msg);
 
+        if ($this->Auth->user())
+            $this->layout = 'sidebar';
+
         if ($this->request->is('post')) {
             $msg = $contactTable->patchEntity($msg, $this->request->getData());
             if ($contactTable->save($msg)) {
@@ -205,5 +209,26 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('An error occoured while sending your message, please try again later.'));
         }
+    }
+
+    public function settings() {
+        $user = $this->Users->get($this->Auth->user('id'));
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('Your data has been saved.'));
+                
+            } else {
+                $this->Flash->error(__('An error occoured while saving your data.'));
+            }
+        }
+
+        $countries = TableRegistry::get('Countries')->find();
+        
+        $this->set('user', $user);
+        $this->set('countries', $countries);
+
+        $this->layout = 'sidebar';
     }
 }

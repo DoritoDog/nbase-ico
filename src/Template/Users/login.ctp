@@ -7,7 +7,7 @@
 
         $options = [
             'type' => 'text', 'name' => 'email', 'label' => false,
-            'class' => 'form-control dark-form-input', 'required' => true
+            'class' => 'dark-form-input', 'required' => true
         ];
         echo $this->Form->control('', $options);
         ?>
@@ -18,7 +18,7 @@
         
         $options = [
             'type' => 'password', 'name' => 'password', 'label' => false,
-            'class' => 'form-control dark-form-input', 'required' => true
+            'class' => 'dark-form-input', 'required' => true
         ];
         echo $this->Form->control('', $options);
         ?>

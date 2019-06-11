@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="dashboard-balance border-bottom border-light pb-5">
-        <h4 class="gold mb-3">Balance</h4>
+        <h4 class="white mb-3">Balance</h4>
 
         <?= $this->Form->create() ?>
         <div class="form-group w-75">
             <?php
-            echo $this->Form->label('eth_address', 'Your Address', ['style' => 'font-weight:bold', 'class' => 'gold']);
+            echo $this->Form->label('eth_address', 'Your Address', ['class' => 'bold grey']);
             
             $options = [
                 'type' => 'text', 'name' => 'eth_address', 'label' => false, 'class' => 'form-control dark-form-input', 'required' => true,
@@ -19,19 +19,19 @@
         </div>
         <?= $this->Form->end() ?>
 
-        <div class="inline grey">
+        <div class="inline grey" style="justify-content: left;">
           <div class="mr-5"><?= $tokenAbbreviation ?> Balance</div>
           <div class="ml-5" id="ncg-balance"></div>
         </div>
-        <div class="inline grey">
+        <div class="inline grey" style="justify-content: left;">
           <div class="mr-5">ETH Balance</div>
           <div class="ml-5" id="eth-balance"></div>
         </div>
       </div>
       
-      <h4 class="gold mt-5">Buy nBase CryptoGold</h4>
+      <h4 class="mt-5 white">Buy nBase CryptoGold</h4>
 
-        <h5 class="gold mt-4">ICO Address</h5>
+        <h5 class="grey mt-4">ICO Address</h5>
         <div class="inline-left">
           <span class="white round-bg" id="ico-address"><?= $icoAddress ?></span>
           <span class="ml-2 mt-1 grey font-weight-bold copy-btn" onclick="copy('#ico-address')">Copy</span>
@@ -42,7 +42,7 @@
 
     <?php $formatter = new NumberFormatter("en_US", NumberFormatter::GROUPING_USED); ?>
     <div class="col-lg-4">
-      <h3 class="gold">ICO Details</h3>
+      <h3 class="white">ICO Details</h3>
       <ul class="grey ico-details-list">
         <li>Token name - <?= $tokenName ?></li>
         <li>Abbreviation - <?= $tokenAbbreviation ?></li>
