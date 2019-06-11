@@ -41,7 +41,7 @@
     <div class="col-sm-6">
       <h3 class="grey"><span class="fa fa-vcard"></span> Security</h3>
       <?php
-        echo $this->Form->create(false, ['type' => 'get', 'action' => 'forgotPassword']);
+        echo $this->Form->create(false, ['type' => 'get', 'url' => ['action' => 'forgotPassword']]);
         $options = ['class' => 'btn profile-btn mt-2', 'id' => 'reset-button'];
         echo $this->Form->button('Reset Password', $options);
         echo $this->Form->end();
