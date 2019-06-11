@@ -3,7 +3,7 @@
     <div class="col-sm-6">
     <h3 class="grey text-center"><span class="fa fa-gear"></span> Account</h3>
       <div class="form-group inline grey">
-      <?= $this->Form->create($user, ['action' => 'settings', 'type' => 'post']) ?>
+      <?= $this->Form->create($user, ['url' => ['action' => 'settings'], 'type' => 'post']) ?>
 
       <div class="form-group">
         <?php
