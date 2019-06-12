@@ -54,7 +54,7 @@
   </div>
 
   <?= $this->Form->create() ?>
-  <?php $this->Form->templates(['inputContainer' => '{{content}}']); ?>
+  <?php $this->Form->setTemplates(['inputContainer' => '{{content}}']); ?>
   <label class="gold mt-3 bold" for="eth_address">EDIT YOUR ADDRESS</label><br>
   <div class="input-group">
     <?= $this->Form->control('eth_address', ['class' => 'form-control dark-form-input', 'value' => h($user->eth_address), 'label' => false, 'spellcheck' => false]) ?>
