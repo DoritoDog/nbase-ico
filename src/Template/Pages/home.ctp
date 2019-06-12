@@ -159,14 +159,14 @@ $this->layout = false;
     <video autoplay loop muted src="img/Gameplay.mp4">
     </video>
 
-    <div class="video-overlay text-center white py-5">
+    <div class="video-overlay text-center white pt-5">
       <h2 class="text-center large-title animated">But in order to have a powerful economy, the actual gameplay has to be fun</h2>
       <p class="text-center mt-3 w-50-resp mx-auto animated">If nBase was only about trading then players would get bored as they would have little use for the items that they are acquiring. nBase is a fully-featured strategy game based on classic titles such as StarCraft. It multiplayer matches between friends with fast paced gameplay (60 seconds is the max to build anything) and unique units. The graphics were designed with replicas of well-known vehicles such as the Nimitz class aircraft carrier and F-22 Raptor.</p>
     </div>
   </section>
 
   <section class="pb-5" id="rts">
-    <h2 class="text-center large-title grey animated">Anyone remember the <span class="gold">golden</span> age of strategy games? Well, nBase does...</h2>
+    <h2 class="text-center large-title grey animated">Anyone remember the <span class="gold">golden</span> age of strategy games? Well, NBASE does...</h2>
     <h5 class="text-center dark-grey mt-3 animated">I'm talking about the classic titles, where you had to actually have a <i>strategy</i> to play. And I can't seem to find that on mobile today...</h5>
 
     <div class="container">
@@ -242,16 +242,10 @@ $this->layout = false;
       </div>
       <div class="row animated" id="faq-2">
         <div class="col-lg-6">
-          <h3>Who's the developer?</h3>
-          <p>nBase has been developed by a young and talented game, full-stack web and Ethereum programmer. He is an avid player and innovator fluent in 7 programming languages, and keen on strategy games where one gets to prove their true tactical superiority. As the sole developer of nBase, CryptoGold, nTag, and 8 websites,  Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. He also has another project currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
-        </div>
-        <div class="col-lg-6">
           <h3>Does it already work? Can I try it?</h3>
           <p>Feel free! The game is available <a class="site-link" href="https://play.google.com/store/apps/details?id=com.warbase.android&hl=en_US.">here</a> on Google Play. There are still improvements that I would like to make, especially based on community feedback. The main areas I would like to improve are the graphics, adding more units, more item effects/variations, and security updates.</p>
         </div>
-      </div>
-      <div class="row mt-5 animated" id="faq-3">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
           <h3>Is it completely decentralized?</h3>
           <p>CryptoGold is a decentralized ERC-20 token on the Ethereum blockchain. However, game items are not decentralized or stored on the blockchain - they are stored in a standard database architecture.  Decentralizing player's inventories and items would be very impractical as it would be slow, require many transactions, and very difficult to update without bringing any real benefit.</p>
         </div>
@@ -318,92 +312,6 @@ var animateHTML = function() {
 }
 
 animateHTML().init();
-  
-/*$(window).scroll(function() {
-
-if ($(window).width() <= 549) {
-
-  $('.animated').css('opacity', 1);
-
-  } else if ($(window).width() > 549) {
-
-    if ($(window).scrollTop() > 400) {
-      $('#trading-1').addClass('fadeInDown');
-      $('#trading-2').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 600) {
-      $('#trading-3').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 700) {
-      $('#economy iframe').addClass('fadeInDown');
-    }
-
-    if ($(window).scrollTop() > 2000) {
-      $('#bank > h2').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 2100) {
-      $('#bank p').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 2200) {
-      $('.bank-info > h2').addClass('fadeInDown');
-      $('#bank .float-left').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 2300) {
-      $('#tab-1').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 2350) {
-      $('#tab-2').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 2400) {
-      $('#tab-3').addClass('fadeInDown');
-    }
-
-    if ($(window).scrollTop() > 3900) {
-      $('#rts h2').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 4000) {
-      $('#rts h5').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 4100) {
-      $('#rts img').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 4200) {
-      $('#rts p').addClass('fadeInDown');
-    }
-
-    if ($(window).scrollTop() > 4600) {
-      $('#ico-details').addClass('fadeInDown');
-      $('#ico-stats').addClass('fadeInDown');
-    }
-
-    if ($(window).scrollTop() > 5400) {
-      $('#developer h2').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 5500) {
-      $('#developer h3').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 5600) {
-      $('.dev-desc').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 5700) {
-      $('#developer .email').addClass('fadeInDown');
-    }
-
-    if ($(window).scrollTop() > 6000) {
-      $('#faq h2').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 6100) {
-      $('#faq-1').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 6200) {
-      $('#faq-2').addClass('fadeInDown');
-    }
-    if ($(window).scrollTop() > 6300) {
-      $('#faq-3').addClass('fadeInDown');
-    }
-
-  }
-});*/
 
 const decimals = new BigNumber('1000000000000000000');
 var xhttp = new XMLHttpRequest();

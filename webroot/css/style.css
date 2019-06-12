@@ -490,6 +490,30 @@ iframe {
   background: #3a3a3a;
 }
 
+.dark-form-input {
+  background: #1e1e1e;
+  color: #808080;
+
+  border: none;
+  border-radius: 5px;
+
+  width: 100%;
+  height: 40px;
+
+  padding-left: 10px;
+}
+
+.dark-form-input:active {
+  outline: none;
+  border: none;
+}
+
+.dark-navbar {
+  background-color: #121212;
+  border-bottom: 3px solid #424242;
+  padding: 20px;
+}
+
 /* #endregion */
 
 /* #region Central Bank */
@@ -767,30 +791,6 @@ iframe {
   }
 }
 
-.dark-form-input {
-  background: #1e1e1e;
-  color: #808080;
-
-  border: none;
-  border-radius: 5px;
-
-  width: 100%;
-  height: 40px;
-
-  padding-left: 10px;
-}
-
-.dark-form-input:active {
-  outline: none;
-  border: none;
-}
-
-.dark-navbar {
-  background-color: #121212;
-  border-bottom: 3px solid #424242;
-  padding: 20px;
-}
-
 /* #region Dashboard */
 
 .ico-details-list {
@@ -813,6 +813,44 @@ iframe {
   background: #2c2c2c;
 }
 
+.wallet {
+  color: white;
+  width: 380px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.wallet:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.59);
+  transform: translate(0, -10px);
+}
+
+.bg-ncg {
+  background: #F0941C;
+  background-image: url('../img/ncg-bg.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-eth {
+  background: #707BCC;
+  background-image: url('../img/eth-bg.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.font-weight-300 {
+  font-weight: 500;
+}
+
+.float-right {
+  float: right;
+}
+
+.justify-left {
+  justify-content: left;
+}
+
 /* #endregion */
 
 /* #region Sidebar */
@@ -824,9 +862,8 @@ iframe {
   float: left;
   left: 0;
   /* background: white; */
-  color: #808080;
-  background: #131313;
-  border-right: 2px solid #808080;
+  color: #FFF;
+  background: #1e1e1e;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -861,18 +898,18 @@ iframe {
 }
 
 #sidebar h5 {
-  color: lightgrey;
+  color: white;
 }
 
 #sidebar span {
   margin-right: 15px;
   font-size: 18px;
-  color: #808080;
+  color: #FFF;
 }
 
 #sidebar a {
   /* color: rgb(80, 80, 80); */
-  color: #808080;
+  color: #FFF;
   font-size: 14px;
   font-weight: 500px;
   width: 100%;
