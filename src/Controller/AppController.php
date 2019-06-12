@@ -85,6 +85,7 @@ class AppController extends Controller
         $softCap = Configure::read('soft_cap');
         $hardCap = Configure::read('hard_cap');
         $termsUrl = Configure::read('terms_and_conditions_url');
+        $ethToNcgContractRate = Configure::read('eth_to_ncg_contract_rate');
 
         $this->set('tokenName', $tokenName);
         $this->set('tokenAbbreviation', $tokenAbbreviation);
@@ -96,5 +97,6 @@ class AppController extends Controller
         $this->set('softCap', $softCap);
         $this->set('hardCap', $hardCap);
         $this->set('termsUrl', $termsUrl);
+        $this->set('ethToNcgContractRate', $ethToNcgContractRate);
     }
 }

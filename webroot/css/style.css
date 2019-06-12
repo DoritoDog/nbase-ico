@@ -503,15 +503,28 @@ iframe {
   padding-left: 10px;
 }
 
+.dark-form-input:focus {
+  background: #1e1e1e;
+  color: #808080;
+}
+
 .dark-form-input:active {
   outline: none;
   border: none;
+}
+
+.dark-bg {
+  background: #1e1e1e;
 }
 
 .dark-navbar {
   background-color: #121212;
   border-bottom: 3px solid #424242;
   padding: 20px;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 /* #endregion */
@@ -804,13 +817,13 @@ iframe {
 }
 
 .copy-btn:hover {
-  color: #2c2c2c;
+  color: #4d4d4d;
 }
 
 .round-bg {
   padding: 5px 10px;
   border-radius: 5px;
-  background: #2c2c2c;
+  background: #1e1e1e;
 }
 
 .wallet {
@@ -821,8 +834,8 @@ iframe {
 }
 
 .wallet:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.59);
-  transform: translate(0, -10px);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 1), 0 10px 20px 0 rgba(0, 0, 0, 1);
+  transform: translate(0, -5px);
 }
 
 .bg-ncg {
@@ -849,6 +862,10 @@ iframe {
 
 .justify-left {
   justify-content: left;
+}
+
+.address-holder .dark-form-input {
+  width: 100%;
 }
 
 /* #endregion */

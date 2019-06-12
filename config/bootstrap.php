@@ -212,3 +212,4 @@ Configure::write('total_supply', '2000000000');
 Configure::write('soft_cap', '3000000');
 Configure::write('hard_cap', '5000000');
 Configure::write('terms_and_conditions_url', 'https://nbasemobile.io/webroot/Terms_and_conditions.pdf');
+Configure::write('eth_to_ncg_contract_rate', '20000');

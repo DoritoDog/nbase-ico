@@ -30,7 +30,8 @@
         echo $this->Form->label('message', 'Message', ['class' => 'grey bold']);
 
         $options = [
-            'name' => 'message', 'label' => false, 'autocomplete' => 'off', 'class' => 'form-control', 'required' => true, 'cols' => 4
+            'name' => 'message', 'label' => false, 'autocomplete' => 'off', 'class' => 'form-control', 'required' => true, 'cols' => 4,
+            'style' => 'background: #1e1e1e; border: none;'
         ];
         echo $this->Form->textarea('message', $options);
         ?>
