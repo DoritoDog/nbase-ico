@@ -114,12 +114,12 @@ $this->layout = false;
 
 
   <section id="bank">
-    <h2 class="text-center large-title grey mb-2 animated">What drives the economy?</h2>
+  <h2 class="text-center large-title grey mb-2 animated">What drives the economy?</h2>
     
     <p class="mx-auto grey py-3 text-center bank-desc animated">For a new trader that is just getting started, it can be difficult to make profit without any initial capital. That is why I have added a central bank to nBase that loans CryptoGold to users. This functionality is hardcoded on the smart contract to ensure that the server may only take a loan back after it is due.</p>
 
     <div class="split">
-      <div class="float-left animated">
+      <div class="animated">
         <img src="img/loans.png" width="100%" alt="Loans">
       </div>
       
@@ -220,10 +220,10 @@ $this->layout = false;
   <section id="developer">
     <div class="text-center">
       <h2 class="animated grey">About the Developer</h2>
-      <h3 class="animated grey gold"><small>Kareem Belgharbi</a></small></h3>
-      <p class=" dev-desc animated grey text-center mx-auto">nBase has been developed by a young and talented game, full-stack web and Ethereum programmer. He is an avid player and innovator fluent in 7 programming languages, and keen on strategy games where one gets to prove their true tactical superiority. As the sole developer of nBase, CryptoGold, nTag, and 8 websites,  Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. He also has another project currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
+      <h2 class="animated grey gold"><small>Kareem Belgharbi</a></small></h2>
+      <p class=" dev-desc animated grey text-center mx-auto">nBase has been developed by a young and talented cross-platform game, full-stack web and Ethereum programmer. He is an avid player and innovator fluent in 7 programming languages, and keen on hardcore strategy games. As the sole developer of nBase, 8 websites, CryptoGold, nTag, and countless 3D assets, Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. His flagship product nBase is a world that challenges expert RTS players and virtual entrepreneurs to prove their skill. He also has another project currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
 
-      <p class="mt-5 email animated grey"><span class="fa fa-envelope"></span> admin@nbasemobile.io</p>
+      <h5 class="mt-5 email animated grey"><span class="fa fa-envelope"></span> admin@nbasemobile.io</h5>
   </section>
 
   <section class="clouds-bg grey py-5" id="faq">

@@ -32,7 +32,7 @@
       </p>
     </div>
 
-    <div class="wallet bg-eth px-3 mx-3">
+    <div class="wallet bg-eth px-3 mr-3">
      <div class="inline pt-4 justify-left">
       <?= $this->Html->image('eth-icon.png', ['width' => 50, 'height' => 50, 'class' => 'mr-3']) ?>
       <div class="inline">

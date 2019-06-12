@@ -573,8 +573,9 @@ iframe {
   color: #9b9b9b;
 }
 
-.split > * {
-  display: inline;
+.split {
+  display: flex;
+  flex-direction: row;
 }
 
 /* #endregion */
@@ -801,6 +802,14 @@ iframe {
 
   .sidebar-content {
     margin-left: 50px !important;
+  }
+
+  .split {
+    flex-direction: column !important;
+  }
+
+  .wallet {
+    width: 100% !important;
   }
 }
 
