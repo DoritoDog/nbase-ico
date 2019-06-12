@@ -7,8 +7,6 @@
     </ol>
   </nav>
 
-  <?= var_dump($user) ?>
-
   <h3 class="white mt-5 pb-2">Wallets</h3>
   <div class="inline justify-left">
     <div class="wallet bg-ncg px-3 mr-3">
