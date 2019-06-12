@@ -70,9 +70,11 @@
     <p class="grey">To take part in the NBASE ICO and receive NCG tokens, please send a minimum of 0.2 ETH to the contract at the following address. Your transaction may take several minutes to be confirmed on the blockchain.</p>
 
     <label class="gold bold">ICO ADDRESS</label>
-    <div class="inline-left">
+    <div class="input-group">
       <span class="form-control dark-form-input" id="ico-address"><?= $icoAddress ?></span>
+      <div class="input-group-append">
       <span class="ml-2 mt-1 grey font-weight-bold copy-btn gold" onclick="copy('#ico-address')">Copy</span>
+      </div>
     </div>
   </div>
 
