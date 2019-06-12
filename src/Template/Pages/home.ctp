@@ -116,38 +116,38 @@ $this->layout = false;
   <section id="bank">
   <h2 class="text-center large-title grey mb-2 animated">What drives the economy?</h2>
     
-    <p class="mx-auto grey py-3 text-center bank-desc animated">For a new trader that is just getting started, it can be difficult to make profit without any initial capital. That is why I have added a central bank to nBase that loans CryptoGold to users. This functionality is hardcoded on the smart contract to ensure that the server may only take a loan back after it is due.</p>
+    <p class="mx-auto grey py-3 text-center bank-desc animated">For a new trader that is just getting started, it can be difficult to make trade without any initial capital. That is why I have added a central bank to nBase that loans CryptoGold to users. This functionality is hardcoded on the smart contract to ensure that the server may only take a loan back after it is due.</p>
 
-    <div class="split">
-      <div class="animated">
-        <img src="img/loans.png" width="100%" alt="Loans">
+    <div class="split centered-content">
+      <div class="animated centered-content">
+        <img src="img/loans.png" width="100%" alt="Loans" class="text-center mx-auto">
       </div>
       
-      <div class="bank-info">
+      <div class="bank-info ml-5">
         <h2 class="dark-grey ubuntu mt-3 animated">Meet The Central Bank of nBase</h2>
         <ul class="bank-ul">
           <li>
             <div class="tab gold animated" id="tab-1">
               <span class="fa fa-bank"></span> <h4>Interest-free loans</h4>
             </div>
-            <div class="tab-description w-50">
-              <p><q>The most hated sort, and with the greatest reason, is usury, which makes a gain out of money itself, and not from the natural object of it. For money was intended to be used in exchange, but not to increase at interest.</q> <br> - <b>Aristotle on interest</b></p>
+            <div class="tab-description">
+              <p class="w-100"><q>The most hated sort, and with the greatest reason, is usury, which makes a gain out of money itself, and not from the natural object of it. For money was intended to be used in exchange, but not to increase at interest.</q> <br> - <b>Aristotle on interest</b></p>
             </div>
           </li>
           <li>
             <div class="tab gold animated" id="tab-2">
               <span class="fa fa-money"></span> <h4>Smart controls prevent inflation</h4>
             </div>
-            <div class="tab-description w-50">
-              <p>Inflation only happens when money is printed out of thin air. The server simply transfers its NCG from a fixed supply. In addition, loans must be repaid which ensures that NCG retains its value.</p>
+            <div class="tab-description">
+              <p class="w-100">Inflation only happens when money is printed out of thin air. The server simply transfers its NCG from a fixed supply. In addition, loans must be repaid which ensures that NCG retains its value.</p>
             </div>
           </li>
           <li>
             <div class="tab gold animated" id="tab-3">
               <span class="fa fa-users"></span> <h4>Giving users startup capital boosts the economy</h4>
             </div>
-            <div class="tab-description w-50">
-              <p>The goal of nBase’s central bank was to allow new players to easily begin trading, which boosts the economy. Currently, players can borrow up to 10 CryptoGold for a period of 10 days. With that players may do whatever they want — trade for items, invest, send it, etc.</p>
+            <div class="tab-description">
+              <p class="w-100">The goal of nBase’s central bank was to allow new players to easily begin trading, which boosts the economy. Currently, players can borrow up to 10 CryptoGold for a period of 10 days. With that players may do whatever they want — trade for items, invest, send it, etc.</p>
             </div>
           </li>
         </ul>
@@ -221,7 +221,7 @@ $this->layout = false;
     <div class="text-center">
       <h2 class="animated grey">About the Developer</h2>
       <h2 class="animated grey gold"><small>Kareem Belgharbi</a></small></h2>
-      <p class=" dev-desc animated grey text-center mx-auto">nBase has been developed by a young and talented cross-platform game, full-stack web and Ethereum programmer. He is an avid player and innovator fluent in 7 programming languages, and keen on hardcore strategy games. As the sole developer of nBase, 8 websites, CryptoGold, nTag, and countless 3D assets, Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. His flagship product nBase is a world that challenges expert RTS players and virtual entrepreneurs to prove their skill. He also has another project currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
+      <p class=" dev-desc animated grey text-center mx-auto">nBase has been developed by a young and talented game, full-stack web and Ethereum programmer. He is an avid player and an innovator fluent in 7 programming languages, and keen on hardcore strategy games. As the sole developer of nBase, 8 websites, CryptoGold, nTag, and countless 3D assets, Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. His flagship product nBase is a world that challenges expert RTS players and virtual entrepreneurs to prove their skills. He is also actively involved in another game currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
 
       <h5 class="mt-5 email animated grey"><span class="fa fa-envelope"></span> admin@nbasemobile.io</h5>
   </section>

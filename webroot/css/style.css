@@ -531,30 +531,25 @@ iframe {
 
 /* #region Central Bank */
 
-.bank-info h2 {
-  margin-left: 50%;
+.bank-info {
+  width: 50%;
 }
 
 .bank-desc {
   width: 50%;
 }
 
-#bank img {
-  margin-left: 30%;
-}
-
 .bank-ul {
   list-style-type: none;
   padding: 0;
   width: 70%;
-  margin-left: 50%;
 }
 
 .bank-ul .tab {
   font-size: 30px;
-  margin: 20px 0;
   text-transform: capitalize;
   padding: 0;
+  width: 500px;
 
   cursor: pointer;
   transition-duration: 0.3s;
@@ -765,8 +760,8 @@ iframe {
 
   .dev-info {
     float: none !important;
-    margin: auto;
-    widtH: 90% !important;
+    margin: 0 !important;
+    width: 90% !important;
   }
 
   .dev-desc {
@@ -778,14 +773,19 @@ iframe {
     width: 90% !important;
   }
 
+  .bank-info {
+    float: left;
+    width: 100% !important;
+  }
+
   .bank-ul {
     width: 100% !important;
     margin: 10px !important;
   }
-
   .bank-info h2 {
     margin: auto !important;
-    text-align: center;
+    text-align: center !important;
+    width: 100% !important;
   }
 
   #bank img {
@@ -798,10 +798,6 @@ iframe {
 
   .w-50-resp {
     width: 100% !important;
-  }
-
-  .sidebar-content {
-    margin-left: 50px !important;
   }
 
   .split {
@@ -881,6 +877,10 @@ iframe {
 
 /* #region Sidebar */
 
+.sidebar-content {
+  margin-left: 250px;
+}
+
 #sidebar {
   width: 250px;
   height: 100vh;
@@ -915,6 +915,10 @@ iframe {
 
   #goal {
       margin-top: 250px;
+  }
+
+  .sidebar-content {
+    margin-left: 50px !important;
   }
 }
 
