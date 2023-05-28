@@ -1,0 +1,29 @@
+services:
+  php:
+    build:
+      dockerfile: .docker/php/Dockerfile
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 80:80
+    depends_on:
+      - database
+  database:
+    image: mysql:8.0.33
+    volumes:
+      - data:/var/lib/mysql
+    expose:
+      - 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: nbase_ico
+  phpmyadmin:
+    image: phpmyadmin:5.2.1-apache
+    ports:
+      - 8080:80
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: nbase_ico
+      PMA_HOST: database
+volumes:
+  data:
