@@ -76,7 +76,7 @@ $this->layout = false;
         ?></li>
       </ul>
     </div>
-    
+
     <div class="header-content">
       <div class="header-text">
         <h3 class="ml-5 text-center animated fadeInDown">nBase <br> <small>A real-time strategy game with the most advanced virtual economy in mobile gaming</small></h3>
@@ -85,9 +85,9 @@ $this->layout = false;
       <div class="w-100 centered-content mb-5">
         <?= $this->Html->link('Join the ICO', ['controller' => 'Users', 'action' => 'add'], ['class' => 'cta mx-auto']) ?>
       </div>
-  
+
       <div id="ico-countdown" class="animated fadeInDown">
-        
+
       </div>
     </div>
   </header>
@@ -110,7 +110,7 @@ $this->layout = false;
 
       </div>
   </section>
-  
+
   <section id="gameplay">
     <video autoplay loop muted src="img/Gameplay.mp4">
     </video>
@@ -177,7 +177,6 @@ $this->layout = false;
     <div class="text-center">
       <h2 class="animated grey">About the Developer</h2>
       <h2 class="animated grey gold"><small>Kareem Belgharbi</a></small></h2>
-      <p class=" dev-desc animated grey text-center mx-auto">nBase has been developed by a young and talented game, full-stack web and Ethereum programmer. He is an avid player and an innovator fluent in 7 programming languages, and keen on hardcore strategy games. As the sole developer of nBase, 8 websites, CryptoGold, nTag, and countless 3D assets, Kareem is always looking to give players the ultimate experience in tactical thinking and rapid decision-making. His flagship product nBase is a world that challenges expert RTS players and virtual entrepreneurs to prove their skills. He is also actively involved in another game currently in beta, which is an augmented reality laser tag game where players can thrill themselves in the classic arcade game using only their phone's camera to recognise whether they hit another player. He is a former student of economics and finance, and bent on applying his experiences in the gaming world - where it's most fun!</p>
 
       <h5 class="mt-5 email animated grey"><span class="fa fa-envelope"></span> admin@nbasemobile.io</h5>
   </section>
