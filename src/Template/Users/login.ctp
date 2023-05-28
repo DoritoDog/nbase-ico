@@ -7,7 +7,7 @@
 
         $options = [
             'type' => 'text', 'name' => 'email', 'label' => false,
-            'class' => 'dark-form-input', 'required' => true
+            'class' => 'dark-form-input', 'required' => true, 'value' => 'example@example.com'
         ];
         echo $this->Form->control('', $options);
         ?>
@@ -15,10 +15,10 @@
     <div class="form-group mx-auto w-75 login-field">
         <?php
         echo $this->Form->label('password', 'Password', ['style' => 'font-weight:bold', 'class' => 'white']);
-        
+
         $options = [
             'type' => 'password', 'name' => 'password', 'label' => false,
-            'class' => 'dark-form-input', 'required' => true
+            'class' => 'dark-form-input', 'required' => true, 'value' => 'password'
         ];
         echo $this->Form->control('', $options);
         ?>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="w-100 centered-content mt-4">
-      <p class="text-center grey mx-auto">Don't have an account? Create one 
+      <p class="text-center grey mx-auto">Don't have an account? Create one
       <?php $options = ['class' => 'site-link']; echo $this->Html->link('here', '/users/add', $options); ?></p>
     </div>
 
