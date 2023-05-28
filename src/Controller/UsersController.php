@@ -29,12 +29,9 @@ class UsersController extends AppController
     public function index()
     {
         $user = $this->Users->get($this->Auth->user('id'));
-        if (!$user->verified) {
-            return $this->redirect(['action' => 'nonVerified']);
-        }
-
-        $dashboardUrl = Router::url(['action' => 'index']);
-        $newsUrl = Router::url(['action' => 'news']);
+//        if (!$user->verified) {
+//            return $this->redirect(['action' => 'nonVerified']);
+//        }
 
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -61,7 +58,7 @@ class UsersController extends AppController
 
                 $verificationLink = Router::url(['controller' => 'Users', 'action' => 'verify', $verificationCode, '_full' => true]);
                 $this->getMailer('User')->send('verify', [$user, $verificationLink]);
-                
+
                 $user = $this->Auth->identify();
                 if ($user) {
                     $this->Auth->setUser($user);
@@ -218,14 +215,14 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('Your data has been saved.'));
-                
+
             } else {
                 $this->Flash->error(__('An error occoured while saving your data.'));
             }
         }
 
         $countries = TableRegistry::get('Countries')->find();
-        
+
         $this->set('user', $user);
         $this->set('countries', $countries);
 
